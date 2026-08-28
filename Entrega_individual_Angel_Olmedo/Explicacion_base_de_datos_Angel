@@ -1,0 +1,4 @@
+Autor y publicación de los datos: Base de datos es de construcción propia a partir de los datos públicos en el portal Partidos de La Roja.
+Contenido: Detalle partido a partido de los partidos oficiales y amistosos jugados por la selección chilena en el periodo seleccionado. Las variables incluyen fecha de partido, generación a la que corresponde, el rival, la condición en la que se jugó el partido (de local, de visita o en cancha neutra), carácter del partido (si es amistoso u oficial), la competencia, los goles de ambos equipos, la diferencia y el resultado.
+Pertinencia: Nos permite segmentar el rendimiento entre partidos oficiales y partidos amistosos, o poder analizar la diferencia de goles según la calidad de los rivales,
+Metodología: Recopilación estructurada de datos históricos disponibles en el portal a los que se le aplicaron filtros de la temporalidad que seleccionamos y las variables definidas.

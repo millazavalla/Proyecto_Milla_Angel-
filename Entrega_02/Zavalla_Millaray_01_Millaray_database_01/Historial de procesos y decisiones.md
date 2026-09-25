@@ -1,4 +1,4 @@
-# Historial de procesos y decisiones:# 
+# Historial de procesos y decisiones:
 
 El proceso de limpieza de datos nace de la idea de definir las generaciones y sus logros de manera menos arbitraria. En las correcciones de la primera entrega se nos mencionó que faltaba una hipótesis clara, así que decidimos irnos directamente al grano y decir que la generación dorada es la mejor en la historia reciente (documentada) del futbol chileno. Por un lado, mi compañero decidió centrarse en los partidos oficiales y yo decidí incluir de todas formas los amistosos para generar un porcentaje de victorias más preciso. 
 

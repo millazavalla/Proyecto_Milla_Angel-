@@ -1,0 +1,21 @@
+# Historial de procesos y decisiones:# 
+
+El proceso de limpieza de datos nace de la idea de definir las generaciones y sus logros de manera menos arbitraria. En las correcciones de la primera entrega se nos mencionó que faltaba una hipótesis clara, así que decidimos irnos directamente al grano y decir que la generación dorada es la mejor en la historia reciente (documentada) del futbol chileno. Por un lado, mi compañero decidió centrarse en los partidos oficiales y yo decidí incluir de todas formas los amistosos para generar un porcentaje de victorias más preciso. 
+
+La primera tabla genera un resumen de la segunda tabla, es decir, la segunda tabla contiene el número de partido (extraído desde la base de datos original), el año, la generación, el rival, la condición (rival/local), el tipo (oficial/amistoso), la competencia, los goles de Chile, los del rival y la diferencia, el resultado y la ciudad. Esta tabla es una versión mejorada de nuestra base de datos original de los partidos, agregando muchos más partidos para ampliar la muestra, esto desde una base de datos nueva, encontrada gracias a ChatGPT, que pertenece al usuario de GitHub Ismael Gomes, quien trabajó con la misma fuente de datos que nosotros ( https://www.partidosdelaroja.com/1970/01/estadisticas-de-la-seleccion-chilena.html ).
+
+Así luego, con esa información, cree un resumen en la tabla 1 que contiene solo la generación, sin un resumen de todos los partidos, sino solo sus características recopiladas, como los partidos, las victorias, derrotas, empates, goles a favor, en contra, diferencia de goles, entre otros, pero a mi parecer el más importante: el porcentaje de victorias. 
+
+Algunas preguntas que pueden responder estas bases de datos limpias son: ¿Qué diferencias de rendimiento existen entre la Generación Dorada de la selección chilena, la generación que la precedió y la que la sucedió? En nuestra corrección se nos pidió más precisión a la hora de definir qué entendemos por mejor, por lo mismo, agregué el porcentaje de victorias y la diferencia de goles, para ya no solo ver quién ganó, sino por cuánto ganó, y el porcentaje de victorias definiría no solo quién es mejor, sino por cuánto es mejor. 
+
+¿Cambian las diferencias entre generaciones al considerar solo partidos oficiales?
+
+¿Qué generación rindió mejor como local y como visitante?
+
+¿Contra qué selecciones tuvo mejores y peores resultados cada generación?
+
+¿En qué competencias tuvo mejor rendimiento cada generación? Pudiendo así separar Copa América, Clasificatorias, Mundial, amistosos, etc.
+
+¿Los jugadores de la Generación Dorada acumularon más partidos internacionales que los de las generaciones comparadas?
+
+Y hay una pregunta final que me parece está en la cabeza de todos los hinchas de La Roja: ¿Qué pasó después de la Generación Dorada?”. Con 2007–2017 versus 2018–2026 se puede visualizar si hubo una caída inmediata, gradual o irregular en victorias, goles y diferencia de gol. Para responderla bien, en vez de agrupar solamente por generación, creo que sería mejor calcular el rendimiento año por año entre 1998 y 2026. Eso permitiría hacer una línea temporal y ver exactamente cuándo comienza el auge y cuándo aparece el descenso.

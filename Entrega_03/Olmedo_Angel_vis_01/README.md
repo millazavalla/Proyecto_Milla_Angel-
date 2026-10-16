@@ -1,11 +1,5 @@
 # Análisis de Rendimiento Histórico de La Roja: El Peso de la Generación Dorada
 
-**Autor:** Ángel Olmedo González  
-**Asignatura / Curso:** Visualización de Datos / Periodismo UC  
-**Proyecto:** Evaluación comparativa del desempeño de la Selección Chilena de Fútbol a través de registros históricos y su comportamiento ofensivo por eras.
-
----
-
 ## 1. Hipótesis de investigación
 
 La "Generación Dorada" no solo representa el ciclo más exitoso en términos de títulos y clasificaciones de la historia de la Selección Chilena, sino que constituye un fenómeno de rendimiento estadístico anómalo: su superioridad frente a eras anteriores (1990-1997 y 1998-2007) se magnifica de manera radical al aislar los partidos oficiales de los amistosos de preparación, revelando una competitividad implacable en escenarios de alta presión.

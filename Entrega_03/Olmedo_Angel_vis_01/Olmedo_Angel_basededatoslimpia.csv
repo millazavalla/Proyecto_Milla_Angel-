@@ -1,0 +1,38 @@
+PARTIDO,FECHA,GENERACION,RIVAL,CONDICION,TIPO,COMPETENCIA,GOLES CHILE,GOLES RIVAL,DIFERENCIA GOLES,RESULTADO
+1,1990-03-20,Generación 1990-1997,Brasil,Visita,Amistoso,Amistoso Internacional,0,4,-4,Derrota
+2,1991-06-30,Generación 1990-1997,Ecuador,Local,Oficial,Copa América (Local),3,1,2,Victoria
+3,1991-07-14,Generación 1990-1997,Argentina,Local,Oficial,Copa América (Local),0,0,0,Empate
+4,1993-06-18,Generación 1990-1997,Paraguay,Neutral,Oficial,Copa América Ecuador,1,1,0,Empate
+5,1995-07-08,Generación 1990-1997,Estados Unidos,Neutral,Oficial,Copa América Uruguay,2,1,1,Victoria
+6,1997-02-12,Generación 1990-1997,Bolivia,Visita,Oficial,Clasificatorias Francia 1998,1,1,0,Empate
+7,1997-11-16,Generación 1990-1997,Bolivia,Local,Oficial,Clasificatorias Francia 1998,3,0,3,Victoria
+8,1998-02-11,Generación 1998-2007,Inglaterra,Visita,Amistoso,Amistoso Internacional,2,0,2,Victoria
+9,1998-06-11,Generación 1998-2007,Italia,Neutral,Oficial,Mundial Francia 1998,2,2,0,Empate
+10,1998-06-17,Generación 1998-2007,Austria,Neutral,Oficial,Mundial Francia 1998,1,1,0,Empate
+11,1998-06-23,Generación 1998-2007,Camerún,Neutral,Oficial,Mundial Francia 1998,1,1,0,Empate
+12,1998-06-27,Generación 1998-2007,Brasil,Neutral,Oficial,Mundial Francia 1998,1,4,-3,Derrota
+13,2000-08-15,Generación 1998-2007,Brasil,Local,Oficial,Clasificatorias Corea-Japón 2002,3,0,3,Victoria
+14,2001-09-01,Generación 1998-2007,Francia,Local,Amistoso,Amistoso Internacional,2,1,1,Victoria
+15,2003-09-09,Generación 1998-2007,Perú,Local,Oficial,Clasificatorias Alemania 2006,2,1,1,Victoria
+16,2004-10-13,Generación 1998-2007,Argentina,Local,Oficial,Clasificatorias Alemania 2006,0,0,0,Empate
+17,2007-06-27,Generación 1998-2007,Ecuador,Neutral,Oficial,Copa América Venezuela,3,2,1,Victoria
+18,2007-07-07,Generación 1998-2007,Brasil,Neutral,Oficial,Copa América Venezuela,1,6,-5,Derrota
+19,2008-10-15,Generación Dorada,Argentina,Local,Oficial,Clasificatorias Sudáfrica 2010,1,0,1,Victoria
+20,2010-06-16,Generación Dorada,Honduras,Neutral,Oficial,Mundial Sudáfrica 2010,1,0,1,Victoria
+21,2010-06-21,Generación Dorada,Suiza,Neutral,Oficial,Mundial Sudáfrica 2010,1,0,1,Victoria
+22,2010-06-25,Generación Dorada,España,Neutral,Oficial,Mundial Sudáfrica 2010,1,2,-1,Derrota
+23,2010-06-28,Generación Dorada,Brasil,Neutral,Oficial,Mundial Sudáfrica 2010,0,3,-3,Derrota
+24,2014-06-13,Generación Dorada,Australia,Neutral,Oficial,Mundial Brasil 2014,3,1,2,Victoria
+25,2014-06-18,Generación Dorada,España,Neutral,Oficial,Mundial Brasil 2014,2,0,2,Victoria
+26,2014-06-23,Generación Dorada,Holanda,Neutral,Oficial,Mundial Brasil 2014,0,2,-2,Derrota
+27,2014-06-28,Generación Dorada,Brasil,Visita,Oficial,Mundial Brasil 2014,1,1,0,Empate
+28,2015-06-11,Generación Dorada,Ecuador,Local,Oficial,Copa América (Local),2,0,2,Victoria
+29,2015-06-29,Generación Dorada,Perú,Local,Oficial,Copa América (Local),2,1,1,Victoria
+30,2015-07-04,Generación Dorada,Argentina,Local,Oficial,Copa América (Local),0,0,0,Empate
+31,2016-06-18,Generación Dorada,México,Neutral,Oficial,Copa América Centenario,7,0,7,Victoria
+32,2016-06-22,Generación Dorada,Colombia,Neutral,Oficial,Copa América Centenario,2,0,2,Victoria
+33,2016-06-26,Generación Dorada,Argentina,Neutral,Oficial,Copa América Centenario,0,0,0,Empate
+34,2017-06-28,Generación Dorada,Portugal,Neutral,Oficial,Copa Confederaciones,0,0,0,Empate
+35,2017-07-02,Generación Dorada,Alemania,Neutral,Oficial,Copa Confederaciones,0,1,-1,Derrota
+36,2017-10-10,Generación Dorada,Brasil,Visita,Oficial,Clasificatorias Rusia 2018,0,3,-3,Derrota
+37,2023-11-21,Transición,Ecuador,Visita,Oficial,Clasificatorias Norteamérica 2026,0,1,-1,Derrota

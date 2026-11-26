@@ -1,0 +1,3 @@
+# Reproducción de visualizaciones existentes
+
+Los notebooks originales se mantienen sin modificaciones. Abrirlos en Colab, instalar/importar `pandas` y `altair` y usar la base correspondiente. Para Millaray, si se usa `partidos_utf8.csv`, leer con `encoding="utf-8", sep=";"` en lugar del `latin1` del notebook original. Si se utiliza el CSV original, leer con `encoding="mac_roman", sep=";"`. Ejecutar y revisar las celdas. Se conserva el HTML Altair exportado anteriormente y el JSON extraído de él; los controles de la web usan ese JSON con campos y filtros configurados en JavaScript. El equipo debe validar la adaptación, los indicadores y el resultado de la ejecución.

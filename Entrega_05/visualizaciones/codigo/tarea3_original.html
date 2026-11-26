@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goleadores de La Roja: ¿Quiénes son? — La Roja Bajo la Lupa</title>
+  <meta name="description" content="Webstory editorial sobre los máximos goleadores históricos de la Selección Chilena de Fútbol: goles oficiales, amistosos y totales." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #d52b1e;
+      --red-dark: #a61c12;
+      --blue: #0039a6;
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #1a202c;
+      --muted: #5a6577;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Lato', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); border: 0;
+    }
+    .site-header {
+      background: var(--blue);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    }
+    .header-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: #fff;
+    }
+    .brand-disc {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--red);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .brand-name { font-weight: 900; font-size: 1rem; letter-spacing: 0.04em; }
+    .brand-sub { font-size: 0.72rem; opacity: 0.85; letter-spacing: 0.08em; }
+    .main-nav { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    .nav-link { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.92rem; opacity: 0.9; }
+    .nav-link:hover { opacity: 1; text-decoration: underline; }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--red-dark); }
+    .page-container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    .story-hero {
+      background: linear-gradient(135deg, var(--blue) 0%, #002366 100%);
+      color: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 14px;
+      margin-bottom: 2.25rem;
+    }
+    .editorial-kicker {
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin: 0 0 0.5rem;
+    }
+    .story-title {
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      font-weight: 900;
+      margin: 0 0 0.85rem;
+      line-height: 1.15;
+    }
+    .story-deck {
+      font-size: 1.12rem;
+      max-width: 780px;
+      margin: 0 0 1.25rem;
+      color: #f1f5f9;
+    }
+    .story-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      font-weight: 700;
+    }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.75rem;
+      align-items: center;
+      margin-bottom: 2.75rem;
+    }
+    @media (max-width: 800px) {
+      .intro-grid { grid-template-columns: 1fr; }
+    }
+    .narrative-block {
+      background: var(--card);
+      padding: 1.75rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .narrative-lead { margin: 0; font-size: 1.05rem; color: #2d3748; }
+    .archetype-card {
+      margin: 0;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+    .archetype-frame img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+    }
+    .archetype-caption {
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .section-title {
+      font-size: 1.65rem;
+      font-weight: 900;
+      margin: 0 0 0.5rem;
+      color: var(--blue);
+    }
+    .data-story-section { margin-bottom: 3rem; }
+    .chart-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+    .chart-controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .segmented-group { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .seg-btn, .btn-soft, .btn-outline {
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: #f1f5f9;
+      color: var(--text);
+    }
+    .seg-btn[aria-pressed="true"] {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+    .chart-actions-right { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn-outline { background: #fff; }
+    .filter-status-line {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.6rem 0.85rem;
+      background: #f8fafc;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .legend-row { display: flex; gap: 1.25rem; margin-bottom: 1rem; font-size: 0.86rem; font-weight: 700; }
+    .legend-item { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .legend-swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+    .swatch-oficial { background: var(--red); }
+    .swatch-amistoso { background: var(--blue); }
+    .axis-header {
+      display: grid;
+      grid-template-columns: 185px 1fr 56px;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.75rem;
+    }
+    .axis-total-label { text-align: right; }
+    .bars-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 185px 1fr 56px;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    @media (max-width: 600px) {
+      .axis-header, .bar-row { grid-template-columns: 130px 1fr 44px; }
+    }
+    .player-name { font-weight: 700; font-size: 0.93rem; }
+    .bar-track {
+      background: #edf2f7;
+      border-radius: 6px;
+      height: 26px;
+      display: flex;
+      overflow: hidden;
+    }
+    .bar-seg-oficial {
+      background: var(--red);
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+    .bar-seg-amistoso {
+      background: var(--blue);
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+    .bar-value { text-align: right; font-weight: 900; font-size: 0.95rem; }
+    .chart-source {
+      margin-top: 1.15rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .table-wrap { overflow-x: auto; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .data-table th, .data-table td { padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; }
+    .data-table th.num, .data-table td.num { text-align: right; }
+    .gallery-intro { margin: 0 0 1.5rem; color: var(--muted); }
+    .podium-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      align-items: end;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 760px) {
+      .podium-grid { grid-template-columns: 1fr; }
+    }
+    .podium-column { display: flex; flex-direction: column; }
+    .photo-slot-card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 12px 12px 0 0;
+      padding: 0.85rem;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .photo-slot-card.is-active, .photo-slot-card:hover {
+      border-color: var(--red);
+    }
+    .photo-frame {
+      width: 100%;
+      height: 220px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+      background: #e2e8f0;
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .photo-slot-index {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.2rem;
+    }
+    .photo-slot-title { font-weight: 900; font-size: 1.1rem; margin: 0 0 0.2rem; color: var(--text); }
+    .photo-slot-caption { font-size: 0.85rem; color: var(--muted); margin: 0; }
+    .podium-step {
+      background: var(--blue);
+      color: #fff;
+      padding: 0.65rem 1rem;
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 900;
+    }
+    .step-first { background: var(--red); min-height: 64px; }
+    .step-second { min-height: 50px; }
+    .step-third { min-height: 40px; opacity: 0.92; }
+    .slot-detail-drawer {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .slot-detail-label { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+    .slot-detail-val { font-weight: 700; font-size: 0.92rem; }
+    .site-footer {
+      background: #1a202c;
+      color: #cbd5e1;
+      padding: 1.5rem 1.25rem;
+      font-size: 0.85rem;
+    }
+    .footer-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#inicio" class="brand-lockup" aria-label="La Roja Bajo la Lupa, inicio">
+        <span class="brand-disc" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF">
+            <polygon points="12,2 14.9,8.6 22,9.3 16.6,14 18.2,21 12,17.3 5.8,21 7.4,14 2,9.3 9.1,8.6" />
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">LA ROJA</span>
+          <span class="brand-sub">BAJO LA LUPA</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Secciones de la historia">
+        <a href="#historia" class="nav-link">Historia</a>
+        <a href="#grafico" class="nav-link">Ranking de goleadores</a>
+        <a href="#galeria" class="nav-link">En fotos</a>
+      </nav>
+
+      <button type="button" id="cta-explorar" class="btn-primary">
+        Explorar datos
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio" class="page-container">
+    <section class="story-hero" aria-labelledby="titulo-principal">
+      <p class="editorial-kicker">Webstory de datos históricos · Selección Chilena de Fútbol</p>
+      <h1 id="titulo-principal" class="story-title">Goleadores de La Roja: ¿Quiénes son?</h1>
+      <p class="story-deck">
+        A lo largo de la historia de la selección chilena de fútbol han pasado grandes y destacados jugadores. A continuación, veremos quienes dejaron su huella en las redes, convirtiéndose en los máximos goleadores históricos de Chile.
+      </p>
+      <div class="story-meta">
+        <span>9 máximos artilleros</span>
+        <span aria-hidden="true">·</span>
+        <span>Desglose: partidos oficiales y amistosos</span>
+        <span aria-hidden="true">·</span>
+        <span>Unidad: goles</span>
+      </div>
+    </section>
+
+    <section id="historia" class="intro-grid" aria-label="Contexto histórico">
+      <div class="narrative-block">
+        <p class="narrative-lead">
+          La historia de la Selección Chilena de Fútbol está marcada por la entrega y el talento de delanteros inolvidables que hicieron vibrar a todo un país. Encabezada por figuras de talla mundial como Alexis Sánchez y Eduardo Vargas, pilares fundamentales de la "Generación Dorada" bicampeona de América, la tabla de goleadores históricos de La Roja también rinde homenaje a leyendas eternas como Marcelo Salas, Iván Zamorano y Carlos Caszely. Cada uno de estos artilleros dejó una huella imborrable en las redes rivales, convirtiendo sus goles en parte esencial de la identidad y el orgullo del fútbol chileno.
+        </p>
+      </div>
+
+      <figure class="archetype-card">
+        <div class="archetype-frame">
+          <img
+            src="celebracion-chile.jpg"
+            alt="Jugadores de la Selección Chilena de Fútbol celebrando un gol en cancha"
+          />
+        </div>
+        <figcaption class="archetype-caption">
+          <strong>Celebración de La Roja en cancha:</strong> jugadores chilenos festejan una anotación vistiendo la camiseta nacional.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="grafico" class="data-story-section" aria-labelledby="titulo-grafico">
+      <div class="section-header-row">
+        <div>
+          <h2 id="titulo-grafico" class="section-title">Ranking de goleadores</h2>
+        </div>
+      </div>
+
+      <div class="data-split-grid">
+        <div class="chart-panel">
+          <div class="chart-controls-bar">
+            <div class="segmented-group" role="group" aria-label="Filtrar tipo de goles">
+              <button type="button" class="seg-btn" data-filter="total" aria-pressed="true">Todos (Total)</button>
+              <button type="button" class="seg-btn" data-filter="oficiales" aria-pressed="false">Solo oficiales</button>
+              <button type="button" class="seg-btn" data-filter="amistosos" aria-pressed="false">Solo amistosos</button>
+            </div>
+
+            <div class="chart-actions-right">
+              <button type="button" id="btn-sort" class="btn-soft">Ordenar: Total</button>
+              <button type="button" id="btn-toggle-view" class="btn-outline" aria-expanded="false">Ver tabla accesible</button>
+            </div>
+          </div>
+
+          <div class="filter-status-line" aria-live="polite">
+            <span id="status-text">Mostrando: <strong>Goles oficiales + Goles en amistosos (Total de goles)</strong> · Orden: <strong>Total de goles (mayor a menor)</strong></span>
+            <span>Unidad: <strong>goles</strong></span>
+          </div>
+
+          <div class="legend-row" aria-label="Leyenda del gráfico">
+            <span class="legend-item">
+              <span class="legend-swatch swatch-oficial" aria-hidden="true"></span>
+              <span>Goles oficiales</span>
+            </span>
+            <span class="legend-item">
+              <span class="legend-swatch swatch-amistoso" aria-hidden="true"></span>
+              <span>Goles en amistosos</span>
+            </span>
+          </div>
+
+          <div id="chart-view" class="chart-canvas-wrap">
+            <div class="axis-header" aria-hidden="true">
+              <span>Nombre y apellido</span>
+              <span>Desglose de anotaciones</span>
+              <span class="axis-total-label">Total</span>
+            </div>
+
+            <div id="bars-container" class="bars-list" role="list" aria-label="Gráfico de barras de goleadores de La Roja"></div>
+          </div>
+
+          <div id="table-view" class="table-wrap" hidden>
+            <table class="data-table">
+              <caption class="sr-only">Tabla de goleadores históricos de La Roja con goles oficiales, goles en amistosos y total de goles</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col" class="num">Goles oficiales</th>
+                  <th scope="col" class="num">Goles en amistosos</th>
+                  <th scope="col" class="num">Total de goles</th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+
+          <p class="chart-source">
+            <strong>Fuente:</strong> Registros históricos oficiales de partidos clase A de la Selección Chilena de Fútbol (ANFP / FIFA / RSSSF).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery-section" aria-labelledby="titulo-galeria">
+      <h2 id="titulo-galeria" class="section-title">Los goleadores en fotos</h2>
+      <p class="gallery-intro">
+        El podio histórico del gol en la Selección Chilena de Fútbol: Alexis Sánchez en lo más alto, escoltado por Eduardo Vargas y Marcelo Salas.
+      </p>
+
+      <div class="podium-grid" role="list" aria-label="Podio de los tres máximos goleadores de La Roja">
+        <div class="podium-column podium-second" role="listitem">
+          <button type="button" class="photo-slot-card" data-slot="1" aria-pressed="false">
+            <div class="photo-frame">
+              <img
+                src="edu.jpg"
+                alt="Eduardo Vargas celebrando con la camiseta número 19 de la Selección Chilena"
+              />
+            </div>
+            <span class="photo-slot-index">2.º lugar histórico</span>
+            <p class="photo-slot-title">Eduardo Vargas</p>
+            <p class="photo-slot-caption">29 oficiales · 16 amistosos</p>
+          </button>
+          <div class="podium-step step-second" aria-hidden="true">
+            <span class="podium-step-rank">2.º</span>
+            <span class="podium-step-goals">45 goles</span>
+          </div>
+        </div>
+
+        <div class="podium-column podium-first" role="listitem">
+          <button type="button" class="photo-slot-card is-active" data-slot="0" aria-pressed="true">
+            <div class="photo-frame">
+              <img
+                src="alexis.jpg"
+                alt="Alexis Sánchez vistiendo el buzo azul y rojo de la Selección Chilena de Fútbol"
+              />
+            </div>
+            <span class="photo-slot-index">1.º lugar histórico</span>
+            <p class="photo-slot-title">Alexis Sánchez</p>
+            <p class="photo-slot-caption">30 oficiales · 21 amistosos</p>
+          </button>
+          <div class="podium-step step-first" aria-hidden="true">
+            <span class="podium-step-rank">1.º</span>
+            <span class="podium-step-goals">51 goles</span>
+          </div>
+        </div>
+
+        <div class="podium-column podium-third" role="listitem">
+          <button type="button" class="photo-slot-card" data-slot="2" aria-pressed="false">
+            <div class="photo-frame">
+              <img
+                src="marcelo.jpg"
+                alt="Marcelo Salas celebrando con el dedo índice en alto y la camiseta número 11 de Chile"
+              />
+            </div>
+            <span class="photo-slot-index">3.º lugar histórico</span>
+            <p class="photo-slot-title">Marcelo Salas</p>
+            <p class="photo-slot-caption">22 oficiales · 15 amistosos</p>
+          </button>
+          <div class="podium-step step-third" aria-hidden="true">
+            <span class="podium-step-rank">3.º</span>
+            <span class="podium-step-goals">37 goles</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slot-detail-drawer" id="slot-detail-drawer" aria-live="polite">
+        <div>
+          <div class="slot-detail-label">Fotografía seleccionada</div>
+          <div class="slot-detail-val" id="slot-det-title">Fotografía 01 — Alexis Sánchez</div>
+        </div>
+        <div>
+          <div class="slot-detail-label">Registro histórico</div>
+          <div class="slot-detail-val" id="slot-det-player">51 goles totales (30 oficiales · 21 amistosos)</div>
+        </div>
+        <div>
+          <div class="slot-detail-label">Periodo en selección</div>
+          <div class="slot-detail-val" id="slot-det-context">2006 – Presente · Máximo artillero histórico</div>
+        </div>
+        <div>
+          <div class="slot-detail-label">Logros destacados</div>
+          <div class="slot-detail-val" id="slot-det-credit">Bicampeón de América (2015, 2016)</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span><strong>LA ROJA BAJO LA LUPA</strong> · Las cifras también juegan</span>
+      <span>Webstory sobre goleadores históricos de la Selección Chilena de Fútbol</span>
+    </div>
+  </footer>
+
+  <script>
+    const goleadores = [
+      { nombre: "Alexis Sánchez", oficiales: 30, amistosos: 21 },
+      { nombre: "Eduardo Vargas", oficiales: 29, amistosos: 16 },
+      { nombre: "Marcelo Salas", oficiales: 22, amistosos: 15 },
+      { nombre: "Iván Zamorano", oficiales: 23, amistosos: 11 },
+      { nombre: "Carlos Caszely", oficiales: 15, amistosos: 14 },
+      { nombre: "Leonel Sánchez", oficiales: 16, amistosos: 8 },
+      { nombre: "Jorge Aravena", oficiales: 12, amistosos: 10 },
+      { nombre: "Arturo Vidal", oficiales: 24, amistosos: 10 },
+      { nombre: "Humberto Suazo", oficiales: 15, amistosos: 6 }
+    ].map(g => ({ ...g, total: g.oficiales + g.amistosos }));
+
+    let filtroActual = "total";
+    let ordenDesc = true;
+    const maxTotal = Math.max(...goleadores.map(g => g.total));
+
+    const barsContainer = document.getElementById("bars-container");
+    const tableBody = document.getElementById("table-body");
+    const statusText = document.getElementById("status-text");
+
+    function getValor(g) {
+      if (filtroActual === "oficiales") return g.oficiales;
+      if (filtroActual === "amistosos") return g.amistosos;
+      return g.total;
+    }
+
+    function render() {
+      const lista = [...goleadores].sort((a, b) =>
+        ordenDesc ? getValor(b) - getValor(a) : getValor(a) - getValor(b)
+      );
+
+      barsContainer.innerHTML = lista.map(g => {
+        const wOf = filtroActual === "amistosos" ? 0 : (g.oficiales / maxTotal) * 100;
+        const wAm = filtroActual === "oficiales" ? 0 : (g.amistosos / maxTotal) * 100;
+        return `
+          <div class="bar-row" role="listitem">
+            <span class="player-name">${g.nombre}</span>
+            <div class="bar-track" title="${g.nombre}: ${g.oficiales} oficiales, ${g.amistosos} amistosos">
+              <div class="bar-seg-oficial" style="width:${wOf}%"></div>
+              <div class="bar-seg-amistoso" style="width:${wAm}%"></div>
+            </div>
+            <span class="bar-value">${getValor(g)}</span>
+          </div>
+        `;
+      }).join("");
+
+      tableBody.innerHTML = lista.map(g => `
+        <tr>
+          <td>${g.nombre}</td>
+          <td class="num">${g.oficiales}</td>
+          <td class="num">${g.amistosos}</td>
+          <td class="num"><strong>${g.total}</strong></td>
+        </tr>
+      `).join("");
+
+      const etiquetas = {
+        total: "Goles oficiales + Goles en amistosos (Total de goles)",
+        oficiales: "Solo goles oficiales",
+        amistosos: "Solo goles en amistosos"
+      };
+      statusText.innerHTML = `Mostrando: <strong>${etiquetas[filtroActual]}</strong> · Orden: <strong>${ordenDesc ? "Mayor a menor" : "Menor a mayor"}</strong>`;
+    }
+
+    document.querySelectorAll(".seg-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".seg-btn").forEach(b => b.setAttribute("aria-pressed", "false"));
+        btn.setAttribute("aria-pressed", "true");
+        filtroActual = btn.dataset.filter;
+        render();
+      });
+    });
+
+    document.getElementById("btn-sort").addEventListener("click", (e) => {
+      ordenDesc = !ordenDesc;
+      e.target.textContent = ordenDesc ? "Ordenar: Mayor a menor" : "Ordenar: Menor a mayor";
+      render();
+    });
+
+    document.getElementById("btn-toggle-view").addEventListener("click", (e) => {
+      const chartView = document.getElementById("chart-view");
+      const tableView = document.getElementById("table-view");
+      const mostrandoTabla = !tableView.hidden;
+      tableView.hidden = mostrandoTabla;
+      chartView.hidden = !mostrandoTabla;
+      e.target.textContent = mostrandoTabla ? "Ver tabla accesible" : "Ver gráfico de barras";
+      e.target.setAttribute("aria-expanded", String(!mostrandoTabla));
+    });
+
+    document.getElementById("cta-explorar").addEventListener("click", () => {
+      document.getElementById("grafico").scrollIntoView({ behavior: "smooth" });
+    });
+
+    const fichasPodio = [
+      {
+        titulo: "Fotografía 01 — Alexis Sánchez",
+        registro: "51 goles totales (30 oficiales · 21 amistosos)",
+        contexto: "2006 – Presente · Máximo artillero histórico",
+        logros: "Bicampeón de América (2015, 2016)"
+      },
+      {
+        titulo: "Fotografía 02 — Eduardo Vargas",
+        registro: "45 goles totales (29 oficiales · 16 amistosos)",
+        contexto: "2009 – Presente · Goleador histórico en Copa América",
+        logros: "Bicampeón de América (2015, 2016) y Botín de Oro"
+      },
+      {
+        titulo: "Fotografía 03 — Marcelo Salas",
+        registro: "37 goles totales (22 oficiales · 15 amistosos)",
+        contexto: "1994 – 2007 · Referente histórico de Francia 1998",
+        logros: "4 goles en la Copa Mundial de la FIFA 1998"
+      }
+    ];
+
+    document.querySelectorAll(".photo-slot-card").forEach(card => {
+      card.addEventListener("click", () => {
+        document.querySelectorAll(".photo-slot-card").forEach(c => {
+          c.classList.remove("is-active");
+          c.setAttribute("aria-pressed", "false");
+        });
+        card.classList.add("is-active");
+        card.setAttribute("aria-pressed", "true");
+        const f = fichasPodio[Number(card.dataset.slot)];
+        document.getElementById("slot-det-title").textContent = f.titulo;
+        document.getElementById("slot-det-player").textContent = f.registro;
+        document.getElementById("slot-det-context").textContent = f.contexto;
+        document.getElementById("slot-det-credit").textContent = f.logros;
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Goleadores de La Roja: ¿Quiénes son? — La Roja Bajo la Lupa</title>
+<meta content="Webstory editorial sobre los máximos goleadores históricos de la Selección Chilena de Fútbol: goles oficiales, amistosos y totales." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="./goleadores.css" rel="stylesheet"/>
+</head>
+<body>
+
+<main class="page-container" id="inicio">
+
+<section aria-label="Contexto histórico" class="intro-grid" id="historia">
+<div class="narrative-block">
+<p class="narrative-lead">
+          La historia de la Selección Chilena de Fútbol está marcada por la entrega y el talento de delanteros inolvidables que hicieron vibrar a todo un país. Encabezada por figuras de talla mundial como Alexis Sánchez y Eduardo Vargas, pilares fundamentales de la "Generación Dorada" bicampeona de América, la tabla de goleadores históricos de La Roja también rinde homenaje a leyendas eternas como Marcelo Salas, Iván Zamorano y Carlos Caszely. Cada uno de estos artilleros dejó una huella imborrable en las redes rivales, convirtiendo sus goles en parte esencial de la identidad y el orgullo del fútbol chileno.
+        </p>
+</div>
+<figure class="archetype-card">
+<div class="archetype-frame">
+<img alt="Jugadores de la Selección Chilena de Fútbol celebrando un gol en cancha" src="./assets/img/celebracion-chile.jpg"/>
+</div>
+<figcaption class="archetype-caption">
+<strong>Celebración de La Roja en cancha:</strong> jugadores chilenos festejan una anotación vistiendo la camiseta nacional.
+         · Crédito fotográfico pendiente de verificación.</figcaption>
+</figure>
+</section>
+<section aria-labelledby="titulo-grafico" class="data-story-section" id="grafico">
+<div class="section-header-row">
+<div>
+<h2 class="section-title" id="titulo-grafico">Ranking de goleadores</h2>
+</div>
+</div>
+<div class="data-split-grid">
+<div class="chart-panel">
+<div class="chart-controls-bar">
+<div aria-label="Filtrar tipo de goles" class="segmented-group" role="group">
+<button aria-pressed="true" class="seg-btn" data-filter="total" type="button">Todos (Total)</button>
+<button aria-pressed="false" class="seg-btn" data-filter="oficiales" type="button">Solo oficiales</button>
+<button aria-pressed="false" class="seg-btn" data-filter="amistosos" type="button">Solo amistosos</button>
+</div>
+<div class="chart-actions-right">
+<button class="btn-soft" id="btn-sort" type="button">Ordenar: Total</button>
+<button aria-expanded="false" class="btn-outline" id="btn-toggle-view" type="button">Ver tabla accesible</button>
+</div>
+</div>
+<div aria-live="polite" class="filter-status-line">
+<span id="status-text">Mostrando: <strong>Goles oficiales + Goles en amistosos (Total de goles)</strong> · Orden: <strong>Total de goles (mayor a menor)</strong></span>
+<span>Unidad: <strong>goles</strong></span>
+</div>
+<div aria-label="Leyenda del gráfico" class="legend-row">
+<span class="legend-item">
+<span aria-hidden="true" class="legend-swatch swatch-oficial"></span>
+<span>Goles oficiales</span>
+</span>
+<span class="legend-item">
+<span aria-hidden="true" class="legend-swatch swatch-amistoso"></span>
+<span>Goles en amistosos</span>
+</span>
+</div>
+<div class="chart-canvas-wrap" id="chart-view">
+<div aria-hidden="true" class="axis-header">
+<span>Nombre y apellido</span>
+<span>Desglose de anotaciones</span>
+<span class="axis-total-label">Total</span>
+</div>
+<div aria-label="Gráfico de barras de goleadores de La Roja" class="bars-list" id="bars-container" role="list"></div>
+</div>
+<div class="table-wrap" hidden="" id="table-view">
+<table class="data-table">
+<caption class="sr-only">Tabla de goleadores históricos de La Roja con goles oficiales, goles en amistosos y total de goles</caption>
+<thead>
+<tr>
+<th scope="col">Nombre</th>
+<th class="num" scope="col">Goles oficiales</th>
+<th class="num" scope="col">Goles en amistosos</th>
+<th class="num" scope="col">Total de goles</th>
+</tr>
+</thead>
+<tbody id="table-body"></tbody>
+</table>
+</div>
+<p class="chart-source">Fuente declarada en la Tarea 3: ANFP / FIFA / RSSSF. Registros y fecha de corte pendientes de cotejo por el equipo. Las cifras corresponden a carreras internacionales, no solo a 1990–2026.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="titulo-galeria" class="gallery-section" id="galeria">
+<h2 class="section-title" id="titulo-galeria">Los goleadores en fotos</h2>
+<p class="gallery-intro">
+        El podio histórico del gol en la Selección Chilena de Fútbol: Alexis Sánchez en lo más alto, escoltado por Eduardo Vargas y Marcelo Salas.
+      </p>
+<div aria-label="Podio de los tres máximos goleadores de La Roja" class="podium-grid" role="list">
+<div class="podium-column podium-second" role="listitem">
+<button aria-pressed="false" class="photo-slot-card" data-slot="1" type="button">
+<div class="photo-frame">
+<img alt="Eduardo Vargas celebrando con la camiseta número 19 de la Selección Chilena" src="./assets/img/edu.jpg"/>
+</div>
+<span class="photo-slot-index">2.º lugar histórico</span>
+<p class="photo-slot-title">Eduardo Vargas</p>
+<p class="photo-slot-caption">29 oficiales · 16 amistosos</p>
+</button>
+<div aria-hidden="true" class="podium-step step-second">
+<span class="podium-step-rank">2.º</span>
+<span class="podium-step-goals">45 goles</span>
+</div>
+</div>
+<div class="podium-column podium-first" role="listitem">
+<button aria-pressed="true" class="photo-slot-card is-active" data-slot="0" type="button">
+<div class="photo-frame">
+<img alt="Alexis Sánchez vistiendo el buzo azul y rojo de la Selección Chilena de Fútbol" src="./assets/img/alexis.jpg"/>
+</div>
+<span class="photo-slot-index">1.º lugar histórico</span>
+<p class="photo-slot-title">Alexis Sánchez</p>
+<p class="photo-slot-caption">30 oficiales · 21 amistosos</p>
+</button>
+<div aria-hidden="true" class="podium-step step-first">
+<span class="podium-step-rank">1.º</span>
+<span class="podium-step-goals">51 goles</span>
+</div>
+</div>
+<div class="podium-column podium-third" role="listitem">
+<button aria-pressed="false" class="photo-slot-card" data-slot="2" type="button">
+<div class="photo-frame">
+<img alt="Marcelo Salas celebrando con el dedo índice en alto y la camiseta número 11 de Chile" src="./assets/img/marcelo.jpg"/>
+</div>
+<span class="photo-slot-index">3.º lugar histórico</span>
+<p class="photo-slot-title">Marcelo Salas</p>
+<p class="photo-slot-caption">22 oficiales · 15 amistosos</p>
+</button>
+<div aria-hidden="true" class="podium-step step-third">
+<span class="podium-step-rank">3.º</span>
+<span class="podium-step-goals">37 goles</span>
+</div>
+</div>
+</div>
+<div aria-live="polite" class="slot-detail-drawer" id="slot-detail-drawer">
+<div>
+<div class="slot-detail-label">Fotografía seleccionada</div>
+<div class="slot-detail-val" id="slot-det-title">Fotografía 01 — Alexis Sánchez</div>
+</div>
+<div>
+<div class="slot-detail-label">Registro histórico</div>
+<div class="slot-detail-val" id="slot-det-player">51 goles totales (30 oficiales · 21 amistosos)</div>
+</div>
+<div>
+<div class="slot-detail-label">Periodo en selección</div>
+<div class="slot-detail-val" id="slot-det-context">2006 – Presente · Máximo artillero histórico</div>
+</div>
+<div>
+<div class="slot-detail-label">Logros destacados</div>
+<div class="slot-detail-val" id="slot-det-credit">Bicampeón de América (2015, 2016)</div>
+</div>
+</div>
+</section>
+</main>
+
+<script defer="" src="./goleadores.js"></script>
+</body>
+</html>

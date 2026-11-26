@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LA ROJA BAJO LA LUPA · Periodismo de datos UC</title>
+<meta content="Reportaje de periodismo de datos sobre la Selección Chilena de Fútbol: ¿Fue la Generación Dorada la mejor generación de la historia? Narración Gráfica de No Ficción, UC." name="description"/>
+<meta content="LA ROJA BAJO LA LUPA" property="og:title"/>
+<meta content="¿Fue la Generación Dorada la mejor generación de la Selección Chilena de Fútbol? Reportaje multimedia de Angel Olmedo González y Millaray Zavalla Velozo." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Tipografía oficial del proyecto: Lato (400 Regular, 700 Bold, 900 Black) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Hoja de estilos principal (ruta relativa compatible con GitHub Pages) -->
+<link href="./style.css" rel="stylesheet"/>
+<!-- Bibliotecas para renderizar gráficos exportados desde Altair (Vega, Vega-Lite y Vega-Embed) -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<!-- Lógica interactiva de la webstory (ruta relativa compatible con GitHub Pages) -->
+<script defer="" src="./datos/altair-equipo.js"></script><script defer="" src="./script.js"></script>
+</head>
+<body>
+<!-- Enlace de accesibilidad: permite a usuarios de teclado ir directo al contenido -->
+<a class="enlace-saltar" href="#portada">Saltar al contenido principal</a>
+<!-- =======================================================================
+         BARRA DE NAVEGACIÓN FIJA E INDICADOR DE PROGRESO DE LECTURA
+         Estructura de tres zonas: Marca · Enlaces de sección · Acción principal
+         ======================================================================= -->
+<header class="barra-superior" id="cabecera">
+<div class="contenedor barra-superior-contenido">
+<!-- Zona 1: Logotipo oficial (estrella blanca en círculo rojo + texto) -->
+<a aria-label="LA ROJA BAJO LA LUPA, ir al inicio" class="marca" href="#portada">
+<svg aria-hidden="true" class="marca-emblema" focusable="false" height="32" viewbox="0 0 36 36" width="32">
+<circle cx="18" cy="18" fill="#CF243D" r="18"></circle>
+<polygon fill="#FFFFFF" points="18,6.5 20.9,14.1 29,14.5 22.6,19.5 24.8,27.3 18,22.8 11.2,27.3 13.4,19.5 7,14.5 15.1,14.1"></polygon>
+</svg>
+<span class="marca-texto">LA ROJA BAJO LA LUPA</span>
+</a>
+<!-- Zona 2: Enlaces de navegación para escritorio -->
+<nav aria-label="Secciones del reportaje" class="navegacion-principal">
+<a class="enlace-nav" href="#contexto">Contexto</a>
+<a class="enlace-nav" href="#metodologia">Metodología</a>
+<a class="enlace-nav" href="#comparador">Comparador</a>
+<a class="enlace-nav" href="#rendimiento">Rendimiento</a>
+<a class="enlace-nav" href="#protagonistas">Protagonistas</a>
+<a class="enlace-nav" href="#cierre">Cierre</a>
+</nav>
+<!-- Zona 3: Acción principal + botón de menú para celulares -->
+<div class="barra-acciones">
+<a class="boton-nav-principal" href="#comparador">Ir a los datos</a>
+<button aria-controls="menu-movil" aria-expanded="false" aria-label="Abrir menú de secciones" class="boton-menu-movil" id="btn-menu-movil" type="button">
+<span aria-hidden="true" class="icono-hamburguesa">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</button>
+</div>
+</div>
+<!-- Menú desplegable accesible para celulares y tablets -->
+<nav aria-label="Navegación móvil" class="menu-movil" hidden="" id="menu-movil">
+<div class="contenedor menu-movil-lista">
+<a class="enlace-movil" href="#portada">Portada</a>
+<a class="enlace-movil" href="#contexto">Contexto histórico</a>
+<a class="enlace-movil" href="#metodologia">Metodología</a>
+<a class="enlace-movil" href="#comparador">Comparador interactivo</a>
+<a class="enlace-movil" href="#rendimiento">Análisis del rendimiento</a>
+<a class="enlace-movil" href="#protagonistas">Los protagonistas</a>
+<a class="enlace-movil" href="#cierre">Cierre y fuentes</a>
+</div>
+</nav>
+<!-- Indicador visual del avance de lectura -->
+<div aria-label="Progreso de lectura del reportaje" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="progreso-lectura-pista" id="barra-progreso-contenedor" role="progressbar">
+<div class="progreso-lectura-relleno" id="barra-progreso-relleno"></div>
+</div>
+</header>
+<!-- =======================================================================
+         CONTENIDO PRINCIPAL DE LA WEBSTORY
+         ======================================================================= -->
+<main id="contenido-principal">
+<!-- ---------------------------------------------------------------------
+           1. PORTADA
+           --------------------------------------------------------------------- -->
+<section aria-labelledby="titulo-investigacion" class="seccion-portada" id="portada">
+<div class="contenedor portada-rejilla">
+<div class="portada-columna-texto">
+<p class="metadato-editorial">
+<span>Narración Gráfica de No Ficción</span>
+<span aria-hidden="true">·</span>
+<span>Pontificia Universidad Católica de Chile</span>
+</p>
+<h1 class="portada-titular" id="titulo-investigacion">¿Fue la Generación Dorada la mejor generación de La Roja?</h1>
+<p class="portada-bajada-reservada">La Generación Dorada suele ocupar un lugar privilegiado en la memoria del fútbol chileno. Sus títulos y actuaciones internacionales instalaron la idea de que fue la mejor selección de la historia. Pero ¿esa superioridad también se observa cuando se comparan sus estadísticas con las de otras generaciones?</p>
+<div class="portada-autoria">
+<p class="portada-autores">
+                Por <strong>Angel Olmedo González</strong> y <strong>Millaray Zavalla Velozo</strong>
+</p>
+<p class="portada-fecha">Versión preliminar · Entrega 05 · Noviembre de 2026</p>
+</div><p class="beta-nota">Versión beta: cifras de trabajo y fotografías pendientes de validación editorial y créditos definitivos.</p>
+<div class="portada-acciones">
+<a class="boton-primario" href="#contexto" id="btn-explorar-historia">
+                Explorar la historia
+                <span aria-hidden="true">↓</span>
+</a>
+</div>
+</div>
+<!-- Fotografía documental principal mediante ruta local reservada -->
+<div class="portada-columna-media">
+<figure class="marco-fotografia marco-portada">
+<div class="fotografia-contenedor proporcion-4-3">
+<img alt="Jugadores de Chile celebran una anotación en cancha." class="fotografia-local" data-fallback="fallback-portada" src="./assets/img/portada-principal.jpg"/>
+<!-- Respaldo visual elegante si aún no se carga la imagen local -->
+<div aria-hidden="true" class="fotografia-reserva" id="fallback-portada">
+<svg class="icono-camara" fill="none" height="32" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="32">
+<rect height="13" rx="2" width="18" x="3" y="6"></rect>
+<circle cx="12" cy="12.5" r="3.5"></circle>
+<path d="M8 6l1.5-2h5L16 6"></path>
+</svg>
+<p class="reserva-etiqueta">Fotografía documental principal</p>
+<p class="reserva-ruta">Fotografía pendiente de selección.</p>
+</div>
+</div>
+<figcaption class="pie-de-foto">
+<span class="pie-titulo">Celebración de La Roja en cancha</span>
+<span aria-hidden="true">·</span>
+<span class="pie-credito">Fotografía de la Tarea 3 · crédito pendiente de verificación</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<!-- ---------------------------------------------------------------------
+           2. CONTEXTO HISTÓRICO
+           Línea de tiempo interactiva con 4 períodos seleccionables
+           --------------------------------------------------------------------- -->
+<section aria-labelledby="titulo-contexto" class="seccion seccion-blanca" id="contexto">
+<div class="contenedor">
+<header class="encabezado-seccion">
+<p class="indice-capitulo">01 · Contexto histórico</p>
+<h2 class="titulo-seccion" id="titulo-contexto">
+              Cuatro etapas para entender la evolución de La Roja
+            </h2>
+<p class="descripcion-seccion">Para responder esta pregunta, este análisis compara el rendimiento de distintas etapas de la selección chilena y distingue entre partidos amistosos y encuentros oficiales. La hipótesis de trabajo sostiene que la Generación Dorada presenta el mejor porcentaje de victorias y la mejor diferencia de goles en competencias oficiales, como Copa América, Clasificatorias y Mundiales.</p>
+</header>
+<!-- Línea de tiempo interactiva accesible (patrón ARIA tablist) -->
+<div class="linea-tiempo-envoltorio">
+<div aria-label="Períodos históricos de la Selección Chilena" class="linea-tiempo-lista" role="tablist">
+<button aria-controls="panel-contexto" aria-selected="true" class="boton-periodo activo" data-periodo="1990-1997" id="tab-periodo-1" role="tab" type="button">
+<span class="periodo-anios">1990–1997</span>
+<span class="periodo-nombre">Generación 1990-1997</span>
+</button>
+<button aria-controls="panel-contexto" aria-selected="false" class="boton-periodo" data-periodo="1998-2006" id="tab-periodo-2" role="tab" tabindex="-1" type="button">
+<span class="periodo-anios">1998–2006</span>
+<span class="periodo-nombre">Generación Francia 98</span>
+</button>
+<button aria-controls="panel-contexto" aria-selected="false" class="boton-periodo" data-periodo="2007-2017" id="tab-periodo-3" role="tab" tabindex="-1" type="button">
+<span class="periodo-anios">2007–2017</span>
+<span class="periodo-nombre">Generación Dorada</span>
+</button>
+<button aria-controls="panel-contexto" aria-selected="false" class="boton-periodo" data-periodo="2018-2026" id="tab-periodo-4" role="tab" tabindex="-1" type="button">
+<span class="periodo-anios">2018–2026</span>
+<span class="periodo-nombre">Post Generación Dorada</span>
+</button>
+</div>
+</div>
+<!-- Panel dinámico que muestra la información del período seleccionado -->
+<article aria-labelledby="tab-periodo-1" class="panel-periodo" id="panel-contexto" role="tabpanel" tabindex="0">
+<div class="panel-periodo-rejilla">
+<!-- Columna izquierda: fotografía histórica del período -->
+<figure class="marco-fotografia">
+<div class="fotografia-contenedor proporcion-4-3">
+<img alt="[Descripción accesible de la fotografía histórica de la Generación 1990-1997]" class="fotografia-local" data-fallback="fallback-contexto" id="contexto-imagen" src="./assets/img/epoca-1990-1997.jpg"/>
+<div aria-hidden="true" class="fotografia-reserva" id="fallback-contexto">
+<svg class="icono-camara" fill="none" height="32" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="32">
+<rect height="13" rx="2" width="18" x="3" y="6"></rect>
+<circle cx="12" cy="12.5" r="3.5"></circle>
+<path d="M8 6l1.5-2h5L16 6"></path>
+</svg>
+<p class="reserva-etiqueta" id="contexto-reserva-titulo">
+                      Fotografía histórica · 1990–1997
+                    </p>
+<p class="reserva-ruta" id="contexto-reserva-ruta">Fotografía pendiente de selección.</p>
+</div>
+</div>
+<figcaption class="pie-de-foto">
+<span id="contexto-pie-foto">Fotografía del período por incorporar</span>
+<span aria-hidden="true">·</span>
+<span id="contexto-credito-foto">Crédito pendiente</span>
+</figcaption>
+</figure>
+<!-- Columna derecha: texto editorial e hitos reservados -->
+<div class="panel-periodo-contenido">
+<p class="periodo-etiqueta-rango" id="contexto-rango">Período 1990–1997</p>
+<h3 class="periodo-titulo-activo" id="contexto-titulo">Generación 1990-1997</h3>
+<div class="bloque-texto-autor" id="contexto-texto">Contexto histórico pendiente de selección y redacción por el equipo.</div>
+<div class="bloque-hitos">
+<h4 class="subtitulo-hitos">Hitos del período</h4>
+<ul class="lista-hitos" id="contexto-hitos"><li>Hitos históricos pendientes de selección por el equipo.</li></ul>
+</div>
+<!-- Controles secuenciales útiles para navegación en celular y lectura lineal -->
+<div class="controles-secuenciales">
+<button class="boton-secundario" disabled="" id="btn-periodo-anterior" type="button">
+                    ← Período anterior
+                  </button>
+<button class="boton-secundario" id="btn-periodo-siguiente" type="button">
+                    Siguiente período →
+                  </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ---------------------------------------------------------------------
+           3. METODOLOGÍA
+           Criterios de comparación y distinción entre oficiales y amistosos
+           --------------------------------------------------------------------- -->
+<section aria-labelledby="titulo-metodologia" class="seccion seccion-superficie" id="metodologia">
+<div class="contenedor">
+<header class="encabezado-seccion">
+<p class="indice-capitulo">02 · Metodología</p>
+<h2 class="titulo-seccion" id="titulo-metodologia">
+              Cómo medimos y comparamos el desempeño entre generaciones
+            </h2>
+<p class="descripcion-seccion">La división de las generaciones constituye una decisión de nosotros y no una clasificación oficial de la Selección Chilena. Los partidos fueron asignados a una generación exclusivamente según el año en que fueron disputados.</p>
+</header>
+<!-- Cuatro criterios estadísticos de comparación -->
+<div class="rejilla-criterios">
+<article class="tarjeta-criterio">
+<p class="criterio-numero">Criterio 01</p>
+<h3 class="criterio-titulo">Porcentaje de victorias</h3>
+<p class="criterio-unidad">Unidad prevista: % de partidos ganados</p>
+<p class="criterio-texto-reservado">Partidos terminados con el resultado Victoria, en relación con el total de encuentros.</p>
+<p class="criterio-formula-reservada">
+                Fórmula: <span>Victorias / partidos × 100</span>
+</p>
+</article>
+<article class="tarjeta-criterio">
+<p class="criterio-numero">Criterio 02</p>
+<h3 class="criterio-titulo">Goles a favor por partido</h3>
+<p class="criterio-unidad">Unidad prevista: Goles / partido</p>
+<p class="criterio-texto-reservado">Goles anotados por encuentro.</p>
+<p class="criterio-formula-reservada">
+                Fórmula: <span>Goles Chile / partidos</span>
+</p>
+</article>
+<article class="tarjeta-criterio">
+<p class="criterio-numero">Criterio 03</p>
+<h3 class="criterio-titulo">Goles en contra por partido</h3>
+<p class="criterio-unidad">Unidad prevista: Goles recibidos / partido</p>
+<p class="criterio-texto-reservado">Goles recibidos por encuentro.</p>
+<p class="criterio-formula-reservada">
+                Fórmula: <span>Goles rival / partidos</span>
+</p>
+</article>
+<article class="tarjeta-criterio">
+<p class="criterio-numero">Criterio 04</p>
+<h3 class="criterio-titulo">Diferencia de goles por partido</h3>
+<p class="criterio-unidad">Unidad prevista: Balance neto / partido</p>
+<p class="criterio-texto-reservado">Balance entre goles a favor y goles en contra por encuentro.</p>
+<p class="criterio-formula-reservada">
+                Fórmula: <span>(Goles Chile − goles rival) / partidos</span>
+</p>
+</article>
+</div>
+<!-- Bloque dedicado: distinción entre encuentros oficiales y amistosos -->
+<article aria-labelledby="titulo-distincion" class="bloque-distincion">
+<div class="distincion-encabezado">
+<p class="criterio-numero">Criterio de segmentación</p>
+<h3 class="distincion-titulo" id="titulo-distincion">
+                Distinción entre encuentros oficiales y amistosos
+              </h3>
+</div>
+<div class="distincion-columnas">
+<div class="distincion-columna">
+<h4 class="distincion-subtitulo">Encuentros oficiales</h4>
+<p class="distincion-texto">No todos los encuentros tienen el mismo carácter competitivo. Los amistosos permiten probar jugadores y esquemas, mientras que los partidos oficiales se disputan por un resultado dentro de una competencia. Por eso, reunir ambos tipos de partidos en una sola cifra puede ocultar diferencias relevantes entre generaciones.</p>
+</div>
+<div class="distincion-columna">
+<h4 class="distincion-subtitulo">Encuentros amistosos</h4>
+<p class="distincion-texto">La base de datos fue organizada según generación y condición reglamentaria —amistoso u oficial— para observar cómo cambia el rendimiento al separar ambas categorías. Esta distinción permite avanzar desde una comparación general hacia otra centrada en los encuentros competitivos.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ---------------------------------------------------------------------
+           4. COMPARADOR INTERACTIVO
+           Tres filtros de partidos · Selector de indicador · Gráfico Altair / Tabla accesible
+           --------------------------------------------------------------------- -->
+<section aria-labelledby="titulo-comparador" class="seccion seccion-blanca" id="comparador">
+<div class="contenedor">
+<header class="encabezado-seccion">
+<p class="indice-capitulo">03 · Comparador interactivo</p>
+<h2 class="titulo-seccion" id="titulo-comparador">El filtro de la verdad</h2>
+<p class="descripcion-seccion">La base de datos fue organizada según generación y condición reglamentaria —amistoso u oficial— para observar cómo cambia el rendimiento al separar ambas categorías. Esta distinción permite avanzar desde una comparación general hacia otra centrada en los encuentros competitivos.</p>
+</header>
+<!-- Barra de controles del comparador -->
+<div aria-label="Controles del comparador" class="comparador-controles" role="region">
+<!-- Grupo 1: Tres botones obligatorios de tipo de partido -->
+<div class="control-grupo">
+<span class="control-etiqueta" id="etiqueta-tipo-partido">Tipo de encuentros</span>
+<div aria-labelledby="etiqueta-tipo-partido" class="grupo-botones" role="group">
+<button aria-pressed="true" class="boton-filtro activo" data-tipo-partido="todos" type="button">
+                  Todos los partidos
+                </button>
+<button aria-pressed="false" class="boton-filtro" data-tipo-partido="oficiales" type="button">
+                  Solo oficiales
+                </button>
+<button aria-pressed="false" class="boton-filtro" data-tipo-partido="amistosos" type="button">
+                  Solo amistosos
+                </button>
+</div>
+</div>
+<!-- Grupo 2: Selector de indicadores estadísticos -->
+<div class="control-grupo">
+<label class="control-etiqueta" for="selector-indicador">
+                Indicador estadístico
+              </label>
+<select class="selector-estadistico" id="selector-indicador">
+<option value="victorias">Porcentaje de victorias</option>
+<option selected="selected" value="goles_favor">Goles a favor por partido</option>
+<option value="goles_contra">Goles en contra por partido</option>
+<option value="diferencia_goles">Diferencia de goles por partido</option>
+</select>
+</div>
+<!-- Grupo 3: Alternar entre gráfico Altair y tabla accesible -->
+<div class="control-grupo">
+<span class="control-etiqueta" id="etiqueta-modo-vista">Formato de lectura</span>
+<div aria-labelledby="etiqueta-modo-vista" class="grupo-botones" role="group">
+<button aria-pressed="true" class="boton-vista activo" data-vista="grafico" id="btn-vista-grafico" type="button">
+                  Gráfico
+                </button>
+<button aria-pressed="false" class="boton-vista" data-vista="tabla" id="btn-vista-tabla" type="button">
+                  Tabla accesible
+                </button>
+</div>
+</div>
+</div>
+<!-- Anuncio en vivo para lectores de pantalla al cambiar filtros -->
+<div aria-live="polite" class="solo-lectores" id="comparador-estado-vivo"></div>
+<!-- Marco principal de visualización / tabla -->
+<div class="comparador-escenario">
+<!-- Metadatos obligatorios: fuente, unidad de medida y cantidad de partidos -->
+<div class="barra-metadatos-grafico">
+<p class="metadato-item">
+<strong>Fuente:</strong>
+<span id="meta-fuente">Base de Millaray · Entrega 02/03</span>
+</p>
+<span aria-hidden="true" class="separador-metadato">·</span>
+<p class="metadato-item">
+<strong>Unidad de medida:</strong>
+<span id="meta-unidad">Goles por partido</span>
+</p>
+<span aria-hidden="true" class="separador-metadato">·</span>
+<p class="metadato-item">
+<strong>Partidos considerados:</strong>
+<span id="meta-partidos">430 (base de trabajo)</span>
+</p>
+</div>
+<!-- Contenedor A: Visualización Altair (Vega-Embed) -->
+<div class="contenedor-vista" id="vista-grafico">
+<div aria-label="Contenedor para gráfico Altair del comparador generacional" class="contenedor-altair" id="vis-comparador" role="region"><div id="grafico-vivo"></div><div hidden="" id="grafico-respaldo"><p>Altair no está disponible. Utiliza la tabla accesible para consultar el filtro seleccionado. Imagen de referencia original: promedio de goles por tipo de partido (sin aplicar el filtro actual).</p><img alt="Gráfico original de Millaray sobre goles a favor por generación y tipo de partido" src="./assets/img/grafico-millaray.png" style="max-width:100%;height:auto"/></div></div>
+</div>
+<!-- Contenedor B: Tabla accesible sincronizada con el selector -->
+<div class="contenedor-vista" hidden="" id="vista-tabla">
+<div class="tabla-desplazable">
+<table class="tabla-datos" id="tabla-comparador">
+<caption id="tabla-comparador-caption">Comparación entre generaciones</caption>
+<thead>
+<tr>
+<th scope="col">Generación</th>
+<th scope="col">Período</th>
+<th scope="col">Partidos considerados</th>
+<th id="tabla-col-indicador" scope="col">Goles a favor por partido</th>
+<th scope="col">Observación editorial</th>
+</tr>
+</thead>
+<tbody id="tabla-comparador-cuerpo">
+<tr>
+<th scope="row">Generación 1990-1997</th>
+<td class="dato-tabular">1990–1997</td>
+<td class="dato-tabular">[Por incorporar]</td>
+<td class="dato-tabular">[Dato por incorporar]</td>
+<td>[Nota metodológica opcional]</td>
+</tr>
+<tr>
+<th scope="row">Generación Francia 98</th>
+<td class="dato-tabular">1998–2006</td>
+<td class="dato-tabular">[Por incorporar]</td>
+<td class="dato-tabular">[Dato por incorporar]</td>
+<td>[Nota metodológica opcional]</td>
+</tr>
+<tr>
+<th scope="row">Generación Dorada</th>
+<td class="dato-tabular">2007–2017</td>
+<td class="dato-tabular">[Por incorporar]</td>
+<td class="dato-tabular">[Dato por incorporar]</td>
+<td>[Nota metodológica opcional]</td>
+</tr>
+<tr>
+<th scope="row">Post Generación Dorada</th>
+<td class="dato-tabular">2018–2026</td>
+<td class="dato-tabular">[Por incorporar]</td>
+<td class="dato-tabular">[Dato por incorporar]</td>
+<td>[Nota metodológica opcional]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="texto-equipo"><h3>Los goles también cuentan una historia</h3><p class="beta-nota">Texto recuperado de la Entrega 4 de Millaray: compara exclusivamente el promedio goleador. Cifras pendientes de revisión por el equipo.</p><p>El gráfico muestra una diferencia entre el rendimiento goleador en amistosos y oficiales. En los partidos oficiales, la Generación Dorada registra el promedio más alto entre las cuatro generaciones comparadas, con cerca de 1,6 goles por encuentro. Le siguen la generación de 1990–1997, con aproximadamente 1,46; la generación de Francia 98, con cerca de 1,07; y la etapa posterior a la Generación Dorada, con alrededor de 0,8 goles por partido.</p><p>En los amistosos, en cambio, la generación de 1990–1997 alcanza el promedio más alto, seguida por la etapa posterior a la Generación Dorada. La comparación evidencia por qué conviene separar los encuentros según su condición: el orden de las generaciones no es necesariamente el mismo cuando se modifica el tipo de partido considerado.</p><p>De todos modos, el promedio de goles a favor no basta por sí solo para determinar cuál fue la mejor selección. Para evaluar la hipótesis también es necesario contrastar el porcentaje de victorias y la diferencia entre goles a favor y en contra en partidos oficiales.</p></div></div>
+</section>
+<!-- ---------------------------------------------------------------------
+           5. ANÁLISIS DEL RENDIMIENTO
+           Módulo inspirado en una cancha de fútbol sobre fondo azul noche (#11243D)
+           + contenedor para visualización temporal del rendimiento anual
+           --------------------------------------------------------------------- -->
+<section aria-labelledby="titulo-rendimiento" class="seccion seccion-cancha" id="rendimiento">
+<div class="contenedor">
+<header class="encabezado-seccion encabezado-oscuro">
+<p class="indice-capitulo indice-claro">04 · Análisis del rendimiento</p>
+<h2 class="titulo-seccion titulo-claro" id="titulo-rendimiento">
+              Cuatro dimensiones tácticas y evolución anual en la cancha
+            </h2>
+<p class="descripcion-seccion descripcion-clara">
+              Selecciona cada espacio táctico sobre el campo para consultar el enfoque de análisis
+              de victorias, ataque, defensa y diferencia de goles, junto con la serie temporal anual.
+            </p>
+</header>
+<!-- Cancha de fútbol con líneas discretas sobre fondo Azul noche (#11243D) -->
+<div class="cancha-modulo">
+<!-- Dibujo geométrico SVG discreto de una cancha reglamentaria -->
+<svg aria-hidden="true" class="cancha-lineas-svg" focusable="false" preserveaspectratio="none" viewbox="0 0 1000 560">
+<!-- Perímetro del campo -->
+<rect fill="none" height="520" stroke="rgba(255,255,255,0.16)" stroke-width="2" width="960" x="20" y="20"></rect>
+<!-- Línea de medio campo -->
+<line stroke="rgba(255,255,255,0.16)" stroke-width="2" x1="500" x2="500" y1="20" y2="540"></line>
+<!-- Círculo central -->
+<circle cx="500" cy="280" fill="none" r="78" stroke="rgba(255,255,255,0.16)" stroke-width="2"></circle>
+<circle cx="500" cy="280" fill="rgba(255,255,255,0.28)" r="3.5"></circle>
+<!-- Área grande izquierda -->
+<rect fill="none" height="300" stroke="rgba(255,255,255,0.14)" stroke-width="2" width="135" x="20" y="130"></rect>
+<rect fill="none" height="150" stroke="rgba(255,255,255,0.14)" stroke-width="2" width="52" x="20" y="205"></rect>
+<!-- Área grande derecha -->
+<rect fill="none" height="300" stroke="rgba(255,255,255,0.14)" stroke-width="2" width="135" x="845" y="130"></rect>
+<rect fill="none" height="150" stroke="rgba(255,255,255,0.14)" stroke-width="2" width="52" x="928" y="205"></rect>
+<!-- Arcos de esquina -->
+<path d="M 20 38 A 18 18 0 0 0 38 20" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="2"></path>
+<path d="M 962 20 A 18 18 0 0 0 980 38" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="2"></path>
+<path d="M 20 522 A 18 18 0 0 1 38 540" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="2"></path>
+<path d="M 962 540 A 18 18 0 0 1 980 522" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="2"></path>
+</svg>
+<!-- Cuatro zonas tácticas obligatorias dentro del módulo de cancha -->
+<div aria-label="Indicadores en cancha" class="cancha-cuadrantes" role="group">
+<button aria-pressed="true" class="zona-tactica activa" data-zona="victorias" type="button">
+<span class="zona-posicion">Zona 01 · Eficacia global</span>
+<span class="zona-titulo">Victorias</span>
+<span class="zona-valor dato-tabular" id="cancha-valor-victorias">Ver comparador</span>
+<span class="zona-descripcion">Indicador definido para la comparación.</span>
+</button>
+<button aria-pressed="false" class="zona-tactica" data-zona="ataque" type="button">
+<span class="zona-posicion">Zona 02 · Área rival</span>
+<span class="zona-titulo">Ataque</span>
+<span class="zona-valor dato-tabular" id="cancha-valor-ataque">Ver comparador</span>
+<span class="zona-descripcion">Indicador definido para la comparación.</span>
+</button>
+<button aria-pressed="false" class="zona-tactica" data-zona="defensa" type="button">
+<span class="zona-posicion">Zona 03 · Área propia</span>
+<span class="zona-titulo">Defensa</span>
+<span class="zona-valor dato-tabular" id="cancha-valor-defensa">Ver comparador</span>
+<span class="zona-descripcion">Indicador definido para la comparación.</span>
+</button>
+<button aria-pressed="false" class="zona-tactica" data-zona="diferencia" type="button">
+<span class="zona-posicion">Zona 04 · Balance de campo</span>
+<span class="zona-titulo">Diferencia de goles</span>
+<span class="zona-valor dato-tabular" id="cancha-valor-diferencia">Ver comparador</span>
+<span class="zona-descripcion">Indicador definido para la comparación.</span>
+</button>
+</div>
+<!-- Panel de lectura táctica asociada a la zona seleccionada -->
+<div aria-live="polite" class="cancha-detalle" id="cancha-detalle">
+<p class="cancha-detalle-etiqueta" id="cancha-detalle-etiqueta">
+                Dimensión seleccionada: Victorias
+              </p>
+<p class="cancha-detalle-texto" id="cancha-detalle-texto">Selecciona una dimensión para consultar el indicador correspondiente en el comparador.</p>
+<a class="cancha-enlace" href="#comparador">Volver al comparador</a></div>
+</div>
+<!-- Contenedor preparado para visualización temporal del rendimiento anual (Altair) -->
+<article aria-labelledby="titulo-serie-anual" class="modulo-rendimiento-anual">
+<div class="modulo-anual-cabecera">
+<div>
+<h3 class="modulo-anual-titulo" id="titulo-serie-anual">¿Qué pasó después de la Generación Dorada?</h3>
+<p class="modulo-anual-subtitulo">Visualización anual 1998–2026 · planificada para la versión final.</p>
+</div>
+<p class="modulo-anual-meta">
+<span>Fuente: pendiente</span>
+<span aria-hidden="true">·</span>
+<span>Unidad: pendiente</span>
+</p>
+</div>
+<div aria-label="Contenedor para gráfico Altair de rendimiento anual" class="contenedor-altair contenedor-altair-oscuro" id="vis-rendimiento-anual" role="region">
+<div class="altair-espera altair-espera-oscuro">
+<p class="altair-espera-titulo">Serie anual en desarrollo</p>
+<p class="altair-espera-texto">Pendiente: exportación de la visualización anual elaborada por el equipo.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ---------------------------------------------------------------------
+           6. LOS PROTAGONISTAS
+           Podio de 3 tarjetas · Ranking interactivo Altair · Galería seleccionable
+           --------------------------------------------------------------------- -->
+<section aria-labelledby="titulo-protagonistas" class="seccion seccion-blanca" id="protagonistas">
+<div class="contenedor"><header class="encabezado-seccion">
+<p class="indice-capitulo">05 · Los protagonistas</p>
+<h2 class="titulo-seccion" id="titulo-protagonistas">
+              Goleadores históricos y referentes de cada proceso
+            </h2>
+<p class="descripcion-seccion">Goleadores de La Roja: ¿Quiénes son? · Módulo de la Tarea 3.</p>
+</header><iframe id="modulo-goleadores" loading="lazy" src="./goleadores.html" style="width:100%;height:1600px;border:0" title="Ranking interactivo y galería de goleadores de la Tarea 3"></iframe><p><a href="./goleadores.html" rel="noopener" target="_blank">Abrir ranking en una página independiente</a></p></div>
+</section>
+<!-- ---------------------------------------------------------------------
+           7. CIERRE
+           Conclusiones de los autores · Metodología, fuentes y datos · Créditos
+           --------------------------------------------------------------------- -->
+<section aria-labelledby="titulo-cierre" class="seccion seccion-cierre" id="cierre">
+<div class="contenedor">
+<div class="cierre-rejilla">
+<!-- Columna principal: conclusiones periodísticas reservadas -->
+<article class="cierre-conclusiones">
+<p class="indice-capitulo indice-claro">06 · Cierre de la investigación</p>
+<h2 class="titulo-seccion titulo-claro" id="titulo-cierre">Conclusiones preliminares</h2>
+<div class="cierre-texto-reservado">
+<p>Los primeros resultados del promedio goleador oficial son consistentes con la hipótesis inicial: la Generación Dorada aparece en el primer lugar de las generaciones incluidas en esta visualización. Sin embargo, esta evidencia es parcial. La conclusión definitiva dependerá de revisar también el porcentaje de victorias y la diferencia de goles en partidos oficiales. Así, la pregunta no se resuelve solo desde el recuerdo de sus triunfos, sino mediante una comparación histórica basada en datos.</p>
+</div>
+</article>
+<!-- Columna lateral: fuentes, acceso a datos y ficha académica -->
+<aside aria-labelledby="titulo-fuentes" class="cierre-fuentes">
+<h3 class="fuentes-titulo" id="titulo-fuentes">
+                Metodología, fuentes y acceso a los datos
+              </h3>
+<dl class="lista-fuentes">
+<div class="fuente-item">
+<dt>Bases de datos consultadas</dt>
+<dd><a href="https://www.partidosdelaroja.com/1970/01/estadisticas-de-la-seleccion-chilena.html">Partidos de La Roja</a> · <a href="https://chile.as.com/chile/2019/06/22/futbol/1561238933_795389.html">Antecedente AS</a> · Base ampliada de Millaray (chile_games.csv de Ismael Gómez: enlace original pendiente).</dd>
+</div>
+<div class="fuente-item">
+<dt>Nota metodológica</dt>
+<dd>Períodos asignados por año del partido. Criterio de penales, cobertura y fecha de corte pendientes de validación por el equipo.</dd>
+</div>
+<div class="fuente-item">
+<dt>Acceso a los datos</dt>
+<dd>
+<a class="enlace-datos" href="./datos/partidos_utf8.csv">Consultar base de partidos (CSV UTF-8)</a> · <a href="https://github.com/millazavalla/Proyecto_Milla_Angel-">Repositorio del equipo</a>
+</dd>
+</div>
+</dl>
+</aside>
+</div>
+</div>
+</section>
+</main>
+<!-- =======================================================================
+         PIE DE PÁGINA: CRÉDITOS Y BOTÓN PARA VOLVER AL INICIO
+         ======================================================================= -->
+<footer class="pie-pagina">
+<div class="contenedor pie-contenido">
+<div class="pie-creditos">
+<p class="pie-marca">LA ROJA BAJO LA LUPA</p>
+<p class="pie-autoria">
+            Investigación y desarrollo: Angel Olmedo González y Millaray Zavalla Velozo ·
+            Narración Gráfica de No Ficción · Pontificia Universidad Católica de Chile
+          </p>
+</div>
+<button class="boton-volver-inicio" id="btn-volver-inicio" type="button">
+          ↑ Volver al inicio
+        </button>
+</div>
+</footer>
+</body>
+</html>

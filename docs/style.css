@@ -1,0 +1,1575 @@
+/* ==========================================================================
+   LA ROJA BAJO LA LUPA — Hoja de estilos principal (CSS3 puro)
+   Curso: Narración Gráfica de No Ficción · Pontificia Universidad Católica de Chile
+   Autores: Angel Olmedo González y Millaray Zavalla Velozo
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES DE DISEÑO (Paleta oficial estricta, sin fondos crema ni marfil)
+   -------------------------------------------------------------------------- */
+:root {
+  --color-blanco: #ffffff;
+  --color-azul-noche: #11243d;
+  --color-rojo-chile: #cf243d;
+  --color-azul-datos: #2674a6;
+  --color-gris-editorial: #667586;
+
+  /* Superficies neutras frías derivadas exclusivamente del blanco y azul noche */
+  --color-superficie-fria: #f5f7fa;
+  --color-borde-sutil: rgba(17, 36, 61, 0.12);
+  --color-borde-oscuro: rgba(255, 255, 255, 0.16);
+  --color-texto-oscuro-secundario: #d5dde7;
+
+  /* Tipografía y escala espacial */
+  --fuente-principal: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ancho-maximo: 1160px;
+  --ancho-lectura: 68ch;
+  --alto-cabecera: 64px;
+  --radio-suave: 6px;
+  --radio-tarjeta: 8px;
+  --transicion-rapida: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. REINICIO BASE Y ACCESIBILIDAD
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--alto-cabecera) + 20px);
+}
+
+/* Respeto estricto a usuarios con sensibilidad al movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding-top: var(--alto-cabecera);
+  font-family: var(--fuente-principal);
+  font-size: 1.0625rem; /* 17px para lectura cómoda (Don Hernán y lectores móviles) */
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-azul-noche);
+  background-color: var(--color-blanco);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+select {
+  font-family: inherit;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+  background-color: rgba(17, 36, 61, 0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* Foco visible de alto contraste para navegación por teclado */
+:focus-visible {
+  outline: 3px solid var(--color-rojo-chile);
+  outline-offset: 2px;
+}
+
+/* Clase para texto exclusivo de lectores de pantalla */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enlace de salto al contenido principal */
+.enlace-saltar {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  padding: 10px 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radio-suave);
+  transition: top var(--transicion-rapida);
+}
+
+.enlace-saltar:focus {
+  top: 12px;
+}
+
+/* Alineación vertical exacta de cifras en tablas y métricas */
+.dato-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   3. CONTENEDOR GENERAL Y RITMO EDITORIAL
+   -------------------------------------------------------------------------- */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.seccion {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  border-top: 1px solid var(--color-borde-sutil);
+}
+
+.seccion-blanca {
+  background-color: var(--color-blanco);
+}
+
+.seccion-superficie {
+  background-color: var(--color-superficie-fria);
+}
+
+.encabezado-seccion {
+  max-width: var(--ancho-lectura);
+  margin-bottom: 40px;
+}
+
+.indice-capitulo {
+  margin: 0 0 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-rojo-chile);
+}
+
+.indice-claro {
+  color: #f48c99;
+}
+
+.titulo-seccion {
+  margin: 0 0 12px;
+  font-size: clamp(1.625rem, 3vw, 2.25rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--color-azul-noche);
+  text-wrap: balance;
+}
+
+.titulo-claro {
+  color: var(--color-blanco);
+}
+
+.descripcion-seccion {
+  margin: 0;
+  color: var(--color-gris-editorial);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.descripcion-clara {
+  color: var(--color-texto-oscuro-secundario);
+}
+
+/* --------------------------------------------------------------------------
+   4. BARRA DE NAVEGACIÓN FIJA E INDICADOR DE PROGRESO
+   -------------------------------------------------------------------------- */
+.barra-superior {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-borde-sutil);
+}
+
+.barra-superior-contenido {
+  height: var(--alto-cabecera);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Zona 1: Logotipo estrella blanca sobre círculo rojo + texto */
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--color-azul-noche);
+  flex-shrink: 0;
+}
+
+.marca-emblema {
+  flex-shrink: 0;
+}
+
+.marca-texto {
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* Zona 2: Enlaces limpios de una línea */
+.navegacion-principal {
+  display: none;
+  align-items: center;
+  gap: 22px;
+}
+
+.enlace-nav {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-azul-noche);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 6px 0;
+  transition: color var(--transicion-rapida);
+}
+
+.enlace-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-rojo-chile);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--transicion-rapida);
+}
+
+.enlace-nav:hover,
+.enlace-nav.activo {
+  color: var(--color-rojo-chile);
+}
+
+.enlace-nav:hover::after,
+.enlace-nav.activo::after {
+  transform: scaleX(1);
+}
+
+/* Zona 3: Botón principal y hamburguesa móvil */
+.barra-acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.boton-nav-principal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 16px;
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radio-suave);
+  white-space: nowrap;
+  transition: background-color var(--transicion-rapida);
+}
+
+.boton-nav-principal:hover {
+  background-color: var(--color-rojo-chile);
+}
+
+.boton-menu-movil {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-suave);
+  cursor: pointer;
+}
+
+.icono-hamburguesa {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20px;
+}
+
+.icono-hamburguesa span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-azul-noche);
+  border-radius: 2px;
+}
+
+/* Menú desplegable móvil */
+.menu-movil {
+  border-top: 1px solid var(--color-borde-sutil);
+  background-color: var(--color-blanco);
+}
+
+.menu-movil-lista {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+
+.enlace-movil {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 4px;
+  color: var(--color-azul-noche);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-borde-sutil);
+}
+
+.enlace-movil:last-child {
+  border-bottom: none;
+}
+
+.enlace-movil:hover {
+  color: var(--color-rojo-chile);
+}
+
+/* Barra de progreso pegada al borde inferior de la cabecera */
+.progreso-lectura-pista {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(17, 36, 61, 0.08);
+  overflow: hidden;
+}
+
+.progreso-lectura-relleno {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-rojo-chile);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* --------------------------------------------------------------------------
+   5. PORTADA
+   -------------------------------------------------------------------------- */
+.seccion-portada {
+  background-color: var(--color-blanco);
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.portada-rejilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.metadato-editorial {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-gris-editorial);
+}
+
+.portada-titular {
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+  color: var(--color-azul-noche);
+  text-wrap: balance;
+}
+
+.portada-bajada-reservada {
+  margin: 0 0 24px;
+  max-width: 58ch;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-gris-editorial);
+}
+
+.portada-autoria {
+  padding-top: 16px;
+  padding-bottom: 24px;
+  border-top: 1px solid var(--color-borde-sutil);
+}
+
+.portada-autores {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: var(--color-azul-noche);
+}
+
+.portada-fecha {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-gris-editorial);
+}
+
+.portada-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.boton-primario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 24px;
+  background-color: var(--color-rojo-chile);
+  color: var(--color-blanco);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radio-suave);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transicion-rapida), transform var(--transicion-rapida);
+}
+
+.boton-primario:hover {
+  background-color: var(--color-azul-noche);
+}
+
+.boton-primario:active {
+  transform: translateY(1px);
+}
+
+/* --------------------------------------------------------------------------
+   6. MARCOS FOTOGRÁFICOS Y RESERVA DE IMÁGENES LOCALES
+   -------------------------------------------------------------------------- */
+.marco-fotografia {
+  margin: 0;
+}
+
+.fotografia-contenedor {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radio-tarjeta);
+  border: 1px solid var(--color-borde-sutil);
+  background-color: var(--color-superficie-fria);
+}
+
+.proporcion-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.proporcion-3-4 {
+  aspect-ratio: 3 / 4;
+}
+
+.proporcion-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.fotografia-local {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fotografia-local.imagen-oculta {
+  display: none;
+}
+
+.fotografia-reserva {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(145deg, #f5f7fa 0%, #e9eef5 100%);
+  color: var(--color-azul-noche);
+}
+
+.fotografia-reserva.visible {
+  display: flex;
+}
+
+.icono-camara {
+  color: var(--color-gris-editorial);
+  margin-bottom: 10px;
+}
+
+.reserva-etiqueta {
+  margin: 0 0 4px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-azul-noche);
+}
+
+.reserva-ruta {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-gris-editorial);
+}
+
+.reserva-compacta .reserva-etiqueta {
+  font-size: 0.8125rem;
+}
+
+.reserva-compacta .reserva-ruta {
+  font-size: 0.75rem;
+}
+
+.pie-de-foto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-gris-editorial);
+}
+
+/* --------------------------------------------------------------------------
+   7. CONTEXTO HISTÓRICO (Línea de tiempo interactiva)
+   -------------------------------------------------------------------------- */
+.linea-tiempo-envoltorio {
+  margin-bottom: 32px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.linea-tiempo-lista {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(210px, 1fr));
+  gap: 12px;
+  position: relative;
+}
+
+.boton-periodo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  min-height: 76px;
+  padding: 14px 16px;
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  cursor: pointer;
+  transition: border-color var(--transicion-rapida), background-color var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.boton-periodo:hover {
+  border-color: var(--color-azul-datos);
+}
+
+.boton-periodo.activo {
+  background-color: var(--color-azul-noche);
+  border-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+}
+
+.periodo-anios {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-rojo-chile);
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.boton-periodo.activo .periodo-anios {
+  color: #f48c99;
+}
+
+.periodo-nombre {
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.3;
+  color: inherit;
+}
+
+.panel-periodo {
+  background-color: var(--color-superficie-fria);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  padding: 24px;
+}
+
+.panel-periodo-rejilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.periodo-etiqueta-rango {
+  margin: 0 0 6px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-azul-datos);
+  font-variant-numeric: tabular-nums;
+}
+
+.periodo-titulo-activo {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.bloque-texto-autor {
+  margin-bottom: 24px;
+  max-width: var(--ancho-lectura);
+  color: var(--color-azul-noche);
+}
+
+.bloque-texto-autor p {
+  margin: 0 0 12px;
+}
+
+.bloque-texto-autor p:last-child {
+  margin-bottom: 0;
+}
+
+.bloque-hitos {
+  padding-top: 18px;
+  border-top: 1px solid var(--color-borde-sutil);
+  margin-bottom: 24px;
+}
+
+.subtitulo-hitos {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.lista-hitos {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--color-gris-editorial);
+}
+
+.lista-hitos li {
+  margin-bottom: 6px;
+}
+
+.controles-secuenciales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.boton-secundario {
+  min-height: 44px;
+  padding: 10px 16px;
+  background-color: var(--color-blanco);
+  color: var(--color-azul-noche);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-suave);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.boton-secundario:hover:not(:disabled) {
+  border-color: var(--color-azul-noche);
+  color: var(--color-rojo-chile);
+}
+
+.boton-secundario:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   8. METODOLOGÍA
+   -------------------------------------------------------------------------- */
+.rejilla-criterios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.tarjeta-criterio {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.criterio-numero {
+  margin: 0 0 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-azul-datos);
+}
+
+.criterio-titulo {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.criterio-unidad {
+  margin: 0 0 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-gris-editorial);
+}
+
+.criterio-texto-reservado {
+  margin: 0 0 16px;
+  color: var(--color-azul-noche);
+  flex-grow: 1;
+}
+
+.criterio-formula-reservada {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-borde-sutil);
+  font-size: 0.875rem;
+  color: var(--color-gris-editorial);
+}
+
+.bloque-distincion {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  padding: 24px;
+}
+
+.distincion-encabezado {
+  margin-bottom: 20px;
+}
+
+.distincion-titulo {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.distincion-columnas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-borde-sutil);
+}
+
+.distincion-subtitulo {
+  margin: 0 0 8px;
+  font-size: 1.0625rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.distincion-texto {
+  margin: 0;
+  color: var(--color-gris-editorial);
+}
+
+/* --------------------------------------------------------------------------
+   9. COMPARADOR INTERACTIVO
+   -------------------------------------------------------------------------- */
+.comparador-controles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background-color: var(--color-superficie-fria);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+}
+
+.control-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-etiqueta {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-azul-noche);
+}
+
+.grupo-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.boton-filtro,
+.boton-vista {
+  min-height: 44px;
+  padding: 10px 14px;
+  background-color: var(--color-blanco);
+  color: var(--color-azul-noche);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-suave);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida), border-color var(--transicion-rapida);
+}
+
+.boton-filtro:hover,
+.boton-vista:hover {
+  border-color: var(--color-azul-datos);
+}
+
+.boton-filtro.activo {
+  background-color: var(--color-rojo-chile);
+  border-color: var(--color-rojo-chile);
+  color: var(--color-blanco);
+}
+
+.boton-vista.activo {
+  background-color: var(--color-azul-datos);
+  border-color: var(--color-azul-datos);
+  color: var(--color-blanco);
+}
+
+.selector-estadistico {
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-azul-noche);
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-suave);
+  cursor: pointer;
+}
+
+.comparador-escenario {
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  background-color: var(--color-blanco);
+  padding: 20px;
+}
+
+.barra-metadatos-grafico {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--color-borde-sutil);
+  font-size: 0.875rem;
+  color: var(--color-gris-editorial);
+}
+
+.metadato-item {
+  margin: 0;
+}
+
+.metadato-item strong {
+  color: var(--color-azul-noche);
+}
+
+.separador-metadato {
+  color: var(--color-gris-editorial);
+}
+
+/* Contenedor de Altair / Vega-Embed */
+.contenedor-altair {
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.altair-espera {
+  width: 100%;
+  min-height: 320px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-superficie-fria);
+  border: 1px dashed rgba(38, 116, 166, 0.35);
+  border-radius: var(--radio-suave);
+}
+
+.altair-espera-titulo {
+  margin: 0 0 8px;
+  font-size: 1.0625rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.altair-espera-texto {
+  margin: 0;
+  max-width: 56ch;
+  font-size: 0.9375rem;
+  color: var(--color-gris-editorial);
+}
+
+/* Tabla accesible */
+.tabla-desplazable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9375rem;
+}
+
+.tabla-datos caption {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+  margin-bottom: 12px;
+}
+
+.tabla-datos th,
+.tabla-datos td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--color-borde-sutil);
+  vertical-align: top;
+}
+
+.tabla-datos thead th {
+  font-size: 0.875rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+  background-color: var(--color-superficie-fria);
+}
+
+.tabla-datos tbody th {
+  font-weight: 700;
+  color: var(--color-azul-noche);
+}
+
+.tabla-datos tbody tr:hover {
+  background-color: var(--color-superficie-fria);
+}
+
+/* --------------------------------------------------------------------------
+   10. ANÁLISIS DEL RENDIMIENTO (Cancha sobre Azul Noche #11243D)
+   -------------------------------------------------------------------------- */
+.seccion-cancha {
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  border-top: none;
+}
+
+.encabezado-oscuro {
+  margin-bottom: 36px;
+}
+
+.cancha-modulo {
+  position: relative;
+  padding: 24px;
+  border-radius: var(--radio-tarjeta);
+  border: 1px solid var(--color-borde-oscuro);
+  background-color: #0d1d33;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+
+.cancha-lineas-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cancha-cuadrantes {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.zona-tactica {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(17, 36, 61, 0.88);
+  border: 1px solid var(--color-borde-oscuro);
+  border-radius: var(--radio-tarjeta);
+  color: var(--color-blanco);
+  cursor: pointer;
+  transition: border-color var(--transicion-rapida), background-color var(--transicion-rapida);
+}
+
+.zona-tactica:hover {
+  border-color: var(--color-azul-datos);
+}
+
+.zona-tactica.activa {
+  background-color: rgba(38, 116, 166, 0.25);
+  border-color: var(--color-rojo-chile);
+}
+
+.zona-posicion {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #8abce0;
+  margin-bottom: 4px;
+}
+
+.zona-titulo {
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.zona-valor {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--color-blanco);
+  margin-bottom: 8px;
+}
+
+.zona-descripcion {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-texto-oscuro-secundario);
+}
+
+.cancha-detalle {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-borde-oscuro);
+}
+
+.cancha-detalle-etiqueta {
+  margin: 0 0 6px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f48c99;
+}
+
+.cancha-detalle-texto {
+  margin: 0;
+  max-width: var(--ancho-lectura);
+  color: var(--color-texto-oscuro-secundario);
+}
+
+.modulo-rendimiento-anual {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-borde-oscuro);
+  border-radius: var(--radio-tarjeta);
+  padding: 24px;
+}
+
+.modulo-anual-cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.modulo-anual-titulo {
+  margin: 0 0 4px;
+  font-size: 1.375rem;
+  font-weight: 900;
+  color: var(--color-blanco);
+}
+
+.modulo-anual-subtitulo {
+  margin: 0;
+  color: var(--color-texto-oscuro-secundario);
+}
+
+.modulo-anual-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-texto-oscuro-secundario);
+}
+
+.contenedor-altair-oscuro .altair-espera-oscuro {
+  background-color: rgba(17, 36, 61, 0.72);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.altair-espera-oscuro .altair-espera-titulo {
+  color: var(--color-blanco);
+}
+
+.altair-espera-oscuro .altair-espera-texto {
+  color: var(--color-texto-oscuro-secundario);
+}
+
+.altair-espera-oscuro code {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-blanco);
+}
+
+/* --------------------------------------------------------------------------
+   11. LOS PROTAGONISTAS (Podio, Ranking Altair, Galería seleccionable)
+   -------------------------------------------------------------------------- */
+.podio-rejilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: end;
+}
+
+.tarjeta-podio {
+  background-color: var(--color-superficie-fria);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  padding: 20px;
+}
+
+.podio-primero {
+  background-color: var(--color-blanco);
+  border-color: var(--color-azul-noche);
+}
+
+.podio-lugar {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  font-weight: 900;
+  color: var(--color-azul-datos);
+}
+
+.podio-lugar-destacado {
+  color: var(--color-rojo-chile);
+}
+
+.podio-nombre {
+  margin: 14px 0 4px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.podio-meta {
+  margin: 0 0 10px;
+  font-size: 0.875rem;
+  color: var(--color-gris-editorial);
+}
+
+.podio-goles {
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-borde-sutil);
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.bloque-ranking-goleadores {
+  padding: 24px;
+  margin-bottom: 40px;
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  background-color: var(--color-blanco);
+}
+
+.ranking-cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.ranking-cabecera .modulo-anual-meta {
+  color: var(--color-gris-editorial);
+}
+
+.subtitulo-bloque {
+  margin: 0 0 4px;
+  font-size: 1.375rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.descripcion-bloque {
+  margin: 0;
+  color: var(--color-gris-editorial);
+}
+
+/* Galería seleccionable */
+.galeria-encabezado {
+  margin-bottom: 20px;
+}
+
+.galeria-rejilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.galeria-selectores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.tarjeta-galeria {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color var(--transicion-rapida), background-color var(--transicion-rapida);
+}
+
+.tarjeta-galeria:hover {
+  border-color: var(--color-azul-datos);
+}
+
+.tarjeta-galeria.activa {
+  border-color: var(--color-rojo-chile);
+  background-color: var(--color-superficie-fria);
+}
+
+.galeria-nombre {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-azul-noche);
+}
+
+.ficha-protagonista {
+  background-color: var(--color-superficie-fria);
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: var(--radio-tarjeta);
+  padding: 24px;
+}
+
+.ficha-titulo {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-azul-noche);
+}
+
+.ficha-subtitulo {
+  margin: 0 0 20px;
+  color: var(--color-gris-editorial);
+  font-weight: 700;
+}
+
+.ficha-datos {
+  margin: 0 0 20px;
+  border-top: 1px solid var(--color-borde-sutil);
+}
+
+.ficha-fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-borde-sutil);
+}
+
+.ficha-fila dt {
+  color: var(--color-gris-editorial);
+}
+
+.ficha-fila dd {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-azul-noche);
+}
+
+.ficha-resena {
+  margin: 0;
+  color: var(--color-azul-noche);
+}
+
+/* --------------------------------------------------------------------------
+   12. CIERRE Y PIE DE PÁGINA
+   -------------------------------------------------------------------------- */
+.seccion-cierre {
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  border-top: 1px solid var(--color-borde-oscuro);
+}
+
+.cierre-rejilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.cierre-texto-reservado {
+  max-width: var(--ancho-lectura);
+  color: var(--color-texto-oscuro-secundario);
+}
+
+.cierre-texto-reservado p {
+  margin: 0 0 16px;
+}
+
+.cierre-texto-reservado p:last-child {
+  margin-bottom: 0;
+}
+
+.cierre-fuentes {
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-borde-oscuro);
+  border-radius: var(--radio-tarjeta);
+}
+
+.fuentes-titulo {
+  margin: 0 0 16px;
+  font-size: 1.1875rem;
+  font-weight: 900;
+  color: var(--color-blanco);
+}
+
+.lista-fuentes {
+  margin: 0;
+}
+
+.fuente-item {
+  padding: 12px 0;
+  border-top: 1px solid var(--color-borde-oscuro);
+}
+
+.fuente-item dt {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #8abce0;
+  margin-bottom: 4px;
+}
+
+.fuente-item dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--color-texto-oscuro-secundario);
+}
+
+.enlace-datos {
+  color: var(--color-blanco);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.enlace-datos:hover {
+  color: #f48c99;
+}
+
+.pie-pagina {
+  background-color: #0b182a;
+  color: var(--color-texto-oscuro-secundario);
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border-top: 1px solid var(--color-borde-oscuro);
+}
+
+.pie-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pie-marca {
+  margin: 0 0 4px;
+  font-size: 0.9375rem;
+  font-weight: 900;
+  color: var(--color-blanco);
+}
+
+.pie-autoria {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-texto-oscuro-secundario);
+}
+
+.boton-volver-inicio {
+  min-height: 44px;
+  padding: 10px 18px;
+  background-color: var(--color-rojo-chile);
+  color: var(--color-blanco);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radio-suave);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transicion-rapida);
+}
+
+.boton-volver-inicio:hover {
+  background-color: var(--color-azul-datos);
+}
+
+/* --------------------------------------------------------------------------
+   13. CONSULTAS DE MEDIOS (RESPONSIVE: TABLET >= 768px Y ESCRITORIO >= 1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .contenedor {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .seccion {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .rejilla-criterios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .distincion-columnas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .comparador-controles {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    align-items: end;
+  }
+
+  .cancha-cuadrantes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .modulo-anual-cabecera,
+  .ranking-cabecera {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .podio-rejilla {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Elevación sutil del primer lugar en el podio de escritorio */
+  .podio-primero {
+    padding-bottom: 36px;
+  }
+
+  .galeria-rejilla {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .pie-contenido {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navegacion-principal {
+    display: flex;
+  }
+
+  .boton-nav-principal {
+    display: inline-flex;
+  }
+
+  .boton-menu-movil,
+  .menu-movil {
+    display: none;
+  }
+
+  .seccion-portada {
+    padding-top: 64px;
+    padding-bottom: 88px;
+  }
+
+  .portada-rejilla {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+  }
+
+  .panel-periodo-rejilla {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 36px;
+  }
+
+  .rejilla-criterios {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cierre-rejilla {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+  }
+}
+
+/* Ajustes técnicos Entrega 05 */
+[hidden]{display:none!important} .portada-titular{font-size:clamp(2.15rem,4.1vw,3.7rem)} .texto-equipo{max-width:70ch;margin:2.5rem auto;line-height:1.65} .beta-nota{font-size:.9rem;color:#667586} #vis-comparador{display:block;min-height:0;overflow-x:auto} #grafico-vivo{min-height:260px;width:100%} #grafico-respaldo{padding:1rem} .zona-valor{font-size:1rem!important} #modulo-goleadores{display:block} .contenedor-vista{min-width:0} .seccion-clara{background:#fff} @media(max-width:600px){.portada-titular{font-size:2.15rem}}
+
+.cancha-enlace{color:#fff;text-decoration:underline;display:inline-block;margin-top:1rem}.cierre-fuentes a{color:inherit;text-decoration:underline}.portada-bajada-reservada{max-width:64ch}

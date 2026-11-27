@@ -35,61 +35,74 @@
         rango: "Período 1990–1997",
         titulo: "Generación 1990-1997",
         imagen: "./assets/img/epoca-1990-1997.jpg",
-        alt: "[Descripción accesible de la fotografía histórica de la Generación 1990-1997]",
+        alt: "Formación de la selección chilena durante las Clasificatorias de 1997",
         reservaTitulo: "Fotografía histórica · 1990–1997",
         reservaRuta: "./assets/img/epoca-1990-1997.jpg",
-        pieFoto: "Fotografía por incorporar",
-        creditoFoto: "Crédito pendiente",
+        pieFoto: "Selección chilena durante las Clasificatorias rumbo a Francia 1998",
+        creditoFoto: "Pepe Alvújar / Partidos de La Roja",
         texto:
-          "Contexto histórico de 1990–1997 pendiente de incorporación por el equipo.",
-        hitos: [
-          "Hitos pendientes de selección por el equipo",
-        ],
+  "Los años 90 estuvieron marcados por la reconstrucción de La Roja. Tras la sanción de la FIFA que le impidió disputar las Clasificatorias rumbo a Estados Unidos 1994, Chile comenzó a recuperar protagonismo en el fútbol sudamericano. Con la dupla Sa-Za como principal referente ofensivo, la Selección Chilena consiguió en 1997 su clasificación al Mundial de Francia 1998, poniendo fin a 16 años de ausencia en la máxima cita del fútbol mundial.",
+hitos: [
+  "1991: Tercer lugar en la Copa América.",
+  "1994: Ausencia del Mundial de Estados Unidos por sanción de la FIFA.",
+  "1997: Clasificación al Mundial de Francia 1998.",
+],
       },
       "1998-2006": {
         rango: "Período 1998–2006",
         titulo: "Generación Francia 98",
         imagen: "./assets/img/epoca-1998-2006.jpg",
-        alt: "[Descripción accesible de la fotografía histórica de la Generación Francia 98]",
+        alt: "Dos futbolistas de la selección chilena celebran en el Mundial de Francia 1998",
         reservaTitulo: "Fotografía histórica · 1998–2006",
         reservaRuta: "./assets/img/epoca-1998-2006.jpg",
-        pieFoto: "Fotografía por incorporar",
-        creditoFoto: "Crédito pendiente",
+        pieFoto: "La Roja en la Copa del Mundo de Francia 1998",
+        creditoFoto: "LaRoja.cl",
         texto:
-          "También nos interesa mirar qué ocurrió con generaciones anteriores, especialmente la de los años 90, donde destacaron jugadores como Iván Zamorano y Marcelo Salas y se logró la clasificación al Mundial de Francia 1998.",
-        hitos: [
-          "Hitos pendientes de selección por el equipo",
-        ],
+  "De la mano de la recordada dupla Sa-Za, Chile volvió a disputar una Copa del Mundo en Francia 1998, instancia en la que alcanzó los octavos de final. Sin embargo, la ilusión que dejó aquella participación mundialista no logró mantenerse en los años siguientes. La Roja quedó fuera de los mundiales de 2002 y 2006, en un período marcado por la irregularidad y las dificultades para consolidar un nuevo proceso futbolístico.",
+hitos: [
+  "1998: Octavos de final en el Mundial de Francia.",
+  "1999: Cuarto lugar en la Copa América.",
+  "2002: Ausencia del Mundial de Corea-Japón.",
+  "2006: Ausencia del Mundial de Alemania.",
+],
       },
       "2007-2017": {
         rango: "Período 2007–2017",
         titulo: "Generación Dorada",
         imagen: "./assets/img/epoca-2007-2017.jpg",
-        alt: "[Descripción accesible de la fotografía histórica de la Generación Dorada]",
+        alt: "Futbolistas de La Roja celebran con el trofeo de la Copa América 2015",
         reservaTitulo: "Fotografía histórica · 2007–2017",
         reservaRuta: "./assets/img/epoca-2007-2017.jpg",
-        pieFoto: "Fotografía por incorporar",
-        creditoFoto: "Crédito pendiente",
+        pieFoto: "Chile celebra su primer título de Copa América en 2015",
+        creditoFoto: "CONMEBOL",
         texto:
-          "Si bien entendemos que hay razones claras para pensar eso, como que Chile consiguió dos Copas América seguidas en 2015 y 2016, eso tampoco nos dice mucho, ya que ¿fue la mejor selección o solo la que consiguió más títulos importantes?",
-        hitos: [
-          "Hitos pendientes de selección por el equipo",
-        ],
+  "La llegada de Marcelo Bielsa en 2007 marcó un antes y un después en el fútbol chileno. Con una propuesta ofensiva y una generación de jugadores que comenzaba a destacar a nivel internacional, La Roja volvió a competir de igual a igual con las grandes selecciones del mundo. Los procesos de Jorge Sampaoli y Juan Antonio Pizzi consolidaron una etapa histórica, coronada con el bicampeonato de América. Pero más allá de los títulos, ¿fue también la generación con el mejor rendimiento estadístico?",
+hitos: [
+  "2010: Octavos de final en el Mundial de Sudáfrica.",
+  "2014: Octavos de final en el Mundial de Brasil.",
+  "2015: Primer título de Copa América.",
+  "2016: Campeón de la Copa América Centenario.",
+  "2017: Subcampeón de la Copa Confederaciones.",
+  "2017: Eliminación de las Clasificatorias a Rusia 2018.",
+],
       },
       "2018-2026": {
         rango: "Período 2018–2026",
         titulo: "Post Generación Dorada",
         imagen: "./assets/img/epoca-2018-2026.jpg",
-        alt: "[Descripción accesible de la fotografía histórica del período Post Generación Dorada]",
+        alt: "Formación de la selección chilena antes de un partido de las Clasificatorias al Mundial 2026",
         reservaTitulo: "Fotografía histórica · 2018–2026",
         reservaRuta: "./assets/img/epoca-2018-2026.jpg",
-        pieFoto: "Fotografía por incorporar",
-        creditoFoto: "Crédito pendiente",
+        pieFoto: "La Roja durante las Clasificatorias rumbo al Mundial 2026",
+        creditoFoto: "Carlos Parra / ANFP",
         texto:
-          "Con 2007–2017 versus 2018–2026 se puede visualizar si hubo una caída inmediata, gradual o irregular en victorias, goles y diferencia de gol.",
-        hitos: [
-          "Hitos pendientes de selección por el equipo",
-        ],
+  "Después de vivir los años más exitosos de su historia, La Roja comenzó a enfrentar uno de sus mayores desafíos: el recambio generacional. La continuidad de varios referentes del bicampeonato, los constantes cambios de entrenador y las dificultades para encontrar nuevos protagonistas marcaron este período. La comparación con la Generación Dorada nos permite observar cuánto terreno perdió Chile en términos de rendimiento y competitividad internacional.",
+hitos: [
+  "2018: Ausencia del Mundial de Rusia.",
+  "2019: Cuarto lugar en la Copa América.",
+  "2022: Ausencia del Mundial de Catar.",
+  "2024: Eliminación en la fase de grupos de la Copa América.",
+],
       },
     },
 
@@ -546,6 +559,7 @@
   // Adaptación técnica de la visualización existente de Altair y de los cuatro indicadores definidos por el equipo.
   function inicializarComparador() {
     const original = window.ALTAIR_EQUIPO;
+    if (!original || !original.datasets) return;
     const datos = Object.values(original.datasets)[0];
     const nombres = original.encoding.x.sort;
     const $ = id => document.getElementById(id);
@@ -559,7 +573,7 @@
       const etiqueta=DATOS_AUTORES.comparador.indicadores[indicador];
       const campo=campos[indicador];
       const lista=datos.filter(r=>tipo==='todos'||r.Tipo===(tipo==='oficiales'?'Oficial':'Amistoso')).map(r=>({...r,victoria:r.Resultado==='Victoria'?100:0}));
-      $('meta-fuente').textContent='Base ampliada de Millaray · Entrega 02/03 (pendiente de validación)';
+      $('meta-fuente').textContent='Partidos de La Roja · elaboración propia (base preliminar)';
       $('meta-unidad').textContent=etiqueta.unidad;
       $('meta-partidos').textContent=lista.length;
       $('tabla-col-indicador').textContent=etiqueta.nombre;
@@ -592,7 +606,7 @@
     $('selector-indicador').value=indicador;$('selector-indicador').addEventListener('change',e=>{indicador=e.target.value;render();});
     function cambiar(v){vista=v;$('vista-grafico').hidden=v==='tabla';$('vista-tabla').hidden=v==='grafico';['grafico','tabla'].forEach(k=>{const b=$('btn-vista-'+k);b.classList.toggle('activo',k===v);b.setAttribute('aria-pressed',String(k===v));});render();}
     $('btn-vista-grafico').addEventListener('click',()=>cambiar('grafico'));$('btn-vista-tabla').addEventListener('click',()=>cambiar('tabla'));
-    document.querySelectorAll('.zona-tactica').forEach(b=>b.addEventListener('click',()=>{const mapa={victorias:'victorias',ataque:'goles_favor',defensa:'goles_contra',diferencia:'diferencia_goles'};indicador=mapa[b.dataset.zona];$('selector-indicador').value=indicador;render();}));
+    document.querySelectorAll('.zona-tactica').forEach(b=>b.addEventListener('click',()=>{const mapa={victorias:'victorias',ataque:'goles_favor',defensa:'goles_contra',diferencia:'diferencia_goles'};indicador=mapa[b.dataset.zona];$('selector-indicador').value=indicador;tipo='oficiales';botones.forEach(x=>{const activo=x.dataset.tipoPartido===tipo;x.classList.toggle('activo',activo);x.setAttribute('aria-pressed',String(activo));});render();}));
     render();
   }
   /* ------------------------------------------------------------------------
@@ -607,6 +621,28 @@
       return;
     }
 
+    const original = window.ALTAIR_EQUIPO;
+    if (original && original.datasets) {
+      const oficiales = Object.values(original.datasets)[0].filter(r => r.Tipo === "Oficial");
+      const grupos = original.encoding.x.sort.map(nombre => ({nombre, filas: oficiales.filter(r => r.Generacion === nombre)})).filter(g=>g.filas.length);
+      const config = {
+        victorias: {campo:"victoria", sufijo:" %", unidad:"de victorias", menor:false},
+        ataque: {campo:"Goles_Chile", sufijo:"", unidad:"goles a favor por partido", menor:false},
+        defensa: {campo:"Goles_Rival", sufijo:"", unidad:"goles recibidos por partido", menor:true},
+        diferencia: {campo:"Dif_Goles", sufijo:"", unidad:"de diferencia de goles por partido", menor:false}
+      };
+      const fmt = new Intl.NumberFormat("es-CL", {minimumFractionDigits:2,maximumFractionDigits:2});
+      Object.entries(config).forEach(([clave, conf])=>{
+        const ranking=grupos.map(g=>({nombre:g.nombre, n:g.filas.length, valor:g.filas.reduce((s,r)=>s+(conf.campo==="victoria"?(r.Resultado==="Victoria"?100:0):Number(r[conf.campo])),0)/g.filas.length})).sort((a,b)=>conf.menor?a.valor-b.valor:b.valor-a.valor);
+        if(!ranking.length)return;
+        const lider=ranking[0], segundo=ranking[1];
+        const valor=v=>(clave==="diferencia"&&v>0?"+":"")+fmt.format(v)+conf.sufijo;
+        const nodo=document.getElementById("cancha-valor-"+clave);
+        if(nodo)nodo.textContent=valor(lider.valor)+" · "+lider.nombre;
+        DATOS_AUTORES.zonasCancha[clave].texto=lider.nombre+" registra "+valor(lider.valor)+" "+conf.unidad+" ("+lider.n+" partidos)."+(segundo?" Le sigue "+segundo.nombre+", con "+valor(segundo.valor)+".":"")+" Cifras preliminares de los encuentros etiquetados como oficiales.";
+      });
+      if(texto)texto.textContent=DATOS_AUTORES.zonasCancha.victorias.texto;
+    }
     zonas.forEach(function (zona) {
       zona.addEventListener("click", function () {
         const clave = zona.getAttribute("data-zona");
@@ -624,6 +660,49 @@
         }
       });
     });
+  }
+
+  /* Evolución anual: misma base que el comparador. Sin interpolar años vacíos. */
+  function inicializarSerieAnual() {
+    const $ = id => document.getElementById(id);
+    const host = $("vis-rendimiento-anual");
+    const tipo = $("anual-tipo"), indicador = $("anual-indicador");
+    const original = window.ALTAIR_EQUIPO;
+    if (!host || !tipo || !indicador || !original || !original.datasets) return;
+    const datos = Object.values(original.datasets)[0];
+    const campos = {victorias:"victoria", goles_favor:"Goles_Chile", goles_contra:"Goles_Rival", diferencia_goles:"Dif_Goles"};
+    const fmt = new Intl.NumberFormat("es-CL", {minimumFractionDigits:2,maximumFractionDigits:2});
+    let actual=null, version=0;
+    function render() {
+      const token=++version, campo=campos[indicador.value], etiqueta=DATOS_AUTORES.comparador.indicadores[indicador.value];
+      const lista=datos.filter(r=>Number(r.ano)>=1998 && Number(r.ano)<=2026 && (tipo.value==="todos" || r.Tipo===(tipo.value==="oficiales"?"Oficial":"Amistoso")));
+      let tramo=0;
+      const anios=Array.from({length:29},(_,i)=>{
+        const ano=1998+i, filas=lista.filter(r=>Number(r.ano)===ano), n=filas.length;
+        const valor=n?filas.reduce((s,r)=>s+(campo==="victoria"?(r.Resultado==="Victoria"?100:0):Number(r[campo])),0)/n:null;
+        if(!n)tramo++;
+        return {ano, partidos:n, valor, tramo, etiqueta:valor===null?"Sin registros":fmt.format(valor)+(campo==="victoria"?" %":"")};
+      });
+      $("anual-resumen").textContent=etiqueta.unidad+" · "+lista.length+" partidos considerados";
+      $("anual-caption").textContent=etiqueta.nombre+" · "+DATOS_AUTORES.comparador.etiquetasTipo[tipo.value];
+      $("anual-col-indicador").textContent=etiqueta.unidad;
+      const cuerpo=$("anual-cuerpo"); cuerpo.replaceChildren();
+      anios.forEach(r=>{const tr=document.createElement("tr"); [r.ano,r.partidos,r.etiqueta].forEach((v,i)=>{const td=document.createElement(i===0?"th":"td");if(i===0)td.scope="row";td.textContent=v;tr.append(td);});cuerpo.append(tr);});
+      if(actual){actual.view.finalize();actual=null;}
+      host.replaceChildren();
+      function fallo(){if(token!==version)return;host.textContent="No fue posible cargar el gráfico. Los datos siguen disponibles en la tabla accesible.";$("anual-tabla").open=true;}
+      if(typeof window.vegaEmbed!=="function"){fallo();return;}
+      const ejeX={field:"ano",type:"quantitative",scale:{domain:[1998,2026],nice:false,zero:false},axis:{title:"Año",format:"d",values:[1998,2002,2006,2010,2014,2018,2022,2026],labelAngle:0,labelOverlap:true}};
+      const ejeY={field:"valor",type:"quantitative",scale:campo==="victoria"?{domain:[0,100],nice:false}:{zero:true},axis:{title:etiqueta.unidad}};
+      const spec={"$schema":"https://vega.github.io/schema/vega-lite/v5.json",width:"container",height:285,autosize:{type:"fit",contains:"padding"},background:"transparent",data:{values:anios},config:{font:"Lato",view:{stroke:null},axis:{labelColor:"#d5dde7",titleColor:"#ffffff",gridColor:"#ffffff20",domainColor:"#d5dde7",tickColor:"#d5dde7",labelFontSize:12,titleFontSize:13}},layer:[
+        {data:{values:[{inicio:2007,fin:2017}]},mark:{type:"rect",color:"#cf243d",opacity:0.15},encoding:{x:{field:"inicio",type:"quantitative",scale:ejeX.scale,axis:ejeX.axis},x2:{field:"fin"}}},
+        {transform:[{filter:"isValid(datum.valor)"}],mark:{type:"line",color:"#8cc8ed",strokeWidth:2},encoding:{x:ejeX,y:ejeY,detail:{field:"tramo",type:"nominal"},order:{field:"ano",type:"quantitative"}}},
+        {transform:[{filter:"isValid(datum.valor)"}],mark:{type:"point",filled:true,size:72,opacity:1},encoding:{x:ejeX,y:ejeY,color:{condition:{test:"datum.ano >= 2007 && datum.ano <= 2017",value:"#ff7e91"},value:"#8cc8ed"},tooltip:[{field:"ano",type:"quantitative",title:"Año",format:"d"},{field:"partidos",type:"quantitative",title:"Partidos"},{field:"etiqueta",type:"nominal",title:etiqueta.nombre}]}}
+      ]};
+      const montaje=document.createElement("div"); montaje.style.width="100%";host.append(montaje);
+      window.vegaEmbed(montaje,spec,{actions:false,renderer:"svg"}).then(r=>{if(token!==version){r.view.finalize();return;}actual=r;}).catch(fallo);
+    }
+    tipo.addEventListener("change",render);indicador.addEventListener("change",render);render();
   }
 
   /* ------------------------------------------------------------------------
@@ -698,6 +777,7 @@
     inicializarLineaTiempo();
     inicializarComparador();
     inicializarModuloCancha();
+    inicializarSerieAnual();
     inicializarGaleriaProtagonistas();
     inicializarVisualizacionesAltair();
   });

@@ -1573,3 +1573,21 @@ code {
 [hidden]{display:none!important} .portada-titular{font-size:clamp(2.15rem,4.1vw,3.7rem)} .texto-equipo{max-width:70ch;margin:2.5rem auto;line-height:1.65} .beta-nota{font-size:.9rem;color:#667586} #vis-comparador{display:block;min-height:0;overflow-x:auto} #grafico-vivo{min-height:260px;width:100%} #grafico-respaldo{padding:1rem} .zona-valor{font-size:1rem!important} #modulo-goleadores{display:block} .contenedor-vista{min-width:0} .seccion-clara{background:#fff} @media(max-width:600px){.portada-titular{font-size:2.15rem}}
 
 .cancha-enlace{color:#fff;text-decoration:underline;display:inline-block;margin-top:1rem}.cierre-fuentes a{color:inherit;text-decoration:underline}.portada-bajada-reservada{max-width:64ch}
+
+/* Rendimiento anual: controles y tabla adaptables, fondo azul noche. */
+.nota-clasificacion { margin: 1rem 0 0; color: var(--color-gris-editorial); font-size: .92rem; }
+.nota-cancha { margin: 0 0 1rem; color: var(--color-texto-oscuro-secundario); font-size: .9rem; }
+.nota-cancha a,.modulo-anual-meta a { color: inherit; text-decoration: underline; }
+.anual-controles { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0; }
+.anual-controles label { flex: 1 1 220px; min-width: 0; display: grid; gap: .35rem; color: #fff; font-weight: 700; font-size: .9rem; }
+.anual-controles select { width: 100%; padding: .7rem; min-height: 44px; border: 1px solid #b9c7d5; border-radius: 6px; background: #fff; color: var(--color-azul-noche); font-size: 1rem; }
+.anual-leyenda { display: flex; align-items:center; gap:.5rem; color: var(--color-texto-oscuro-secundario); font-size:.9rem; margin: .7rem 0 0; }
+.anual-leyenda span { width: .85rem; height: .85rem; border-radius: 3px; background: #ff7e91; }
+#vis-rendimiento-anual { display: block; min-height: 0; width: 100%; overflow-x: auto; margin: 1rem 0; color: #fff; }
+#vis-rendimiento-anual .vega-embed { width:100%; }
+.anual-nota { font-size: .9rem; margin: .6rem 0; }
+.anual-tabla { margin-top: 1rem; color: #fff; }
+.anual-tabla summary { cursor: pointer; text-decoration: underline; padding: .5rem 0; }
+.anual-tabla .tabla-desplazable { background: #fff; color: var(--color-azul-noche); border-radius: 6px; margin-top: .5rem; }
+.anual-tabla .tabla-datos { min-width: 310px; }
+@media(max-width: 600px) { .modulo-rendimiento-anual { padding: 16px; } .anual-controles { gap:.6rem; } }
